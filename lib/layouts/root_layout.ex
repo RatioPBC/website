@@ -29,11 +29,11 @@ defmodule RatioPBC.RootLayout do
                 <h1 class="text-2xl font-bold text-ink">Ratio PBC</h1>
               </div>
               <div class="hidden md:flex space-x-8">
-                <a href="index.html" class="text-ink hover:text-sunset font-medium">Home</a>
-                <a href="about.html" class="text-dark-gray hover:text-sunset">About</a>
-                <a href="services.html" class="text-dark-gray hover:text-sunset">Services</a>
-                <a href="blog.html" class="text-dark-gray hover:text-sunset">Blog</a>
-                <a href="contact.html" class="text-dark-gray hover:text-sunset">Contact</a>
+                <a href="/" class="text-ink hover:text-sunset font-medium">Home</a>
+                <a href="/about" class="text-dark-gray hover:text-sunset">About</a>
+                <a href="/services" class="text-dark-gray hover:text-sunset">Services</a>
+                <a href="/blog" class="text-dark-gray hover:text-sunset">Blog</a>
+                <a href="/contact" class="text-dark-gray hover:text-sunset">Contact</a>
               </div>
               <div class="md:hidden">
                 <button class="text-dark-gray hover:text-sunset">
