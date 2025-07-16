@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http_equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>
+      Elixir.RatioPBC
+    </title>
+
+    <link rel="stylesheet" href="/css/site.css">
+  </head>
+
+  <body>
+    <main>
+      <p>
+  hello, world!
+</p>
+    </main>
+
+    
+      <script>
+  function log(message) {
+    if (true) {
+      console.log(`[web_dev_utils] ${message}`)
+    }
+  }
+  function connect() {
+    try {
+      window.socket = new WebSocket('ws://' + location.host + '/ws');
+
+      window.socket.onmessage = function(e) {
+        if (e.data === "reload") {
+          log("reloading!");
+          location.reload();
+        } else if (e.data === "subscribed") {
+          log("connected and subscribed!");
+        }
+      }
+
+      window.socket.onopen = () => {
+        waitForConnection(() => {
+          log("sending 'subscribe' message");
+          window.socket.send("subscribe")
+        }
+        , 300);
+      };
+
+      window.socket.onclose = () => {
+        setTimeout(() => connect(), 500);
+      };
+
+      function waitForConnection(callback, interval) {
+        log("waiting for connection!")
+        if (window.socket.readyState === 1) {
+          callback();
+        } else {
+          log("setting a timeout")
+          setTimeout(() => waitForConnection(callback, interval), interval);
+        }
+      }
+    } catch (e) {
+      log(e);
+      setTimeout(() => connect(), 500);
+    }
+  }
+
+  log("about to connect");
+  connect();
+</script>
+
+    
+  </body>
+</html>

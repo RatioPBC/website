@@ -4,3 +4,9 @@ erlang = "latest"
 
 [tasks."install:tableau"]
 run = "mix archive.install hex tableau_new"
+
+[tasks.build]
+run = "mix build"
+
+[tasks.serve]
+run = "mix tableau.server"
