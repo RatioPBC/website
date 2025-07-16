@@ -1,2 +1,6 @@
 [tools]
-node = "23.8.0"
+elixir = "latest"
+erlang = "latest"
+
+[tasks."install:tableau"]
+run = "mix archive.install hex tableau_new"
