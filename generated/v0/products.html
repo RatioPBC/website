@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products - Ratio PBC</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'dark-gray': '#4B4B4B',
+                        'cream': '#F5F3F0',
+                        'platinum': '#BFC3CA',
+                        'sunset': '#E9A753',
+                        'ink': '#4D5F75'
+                    }
+                }
+            }
+        }
+    </script>
+  </head>
+  <body class="bg-cream text-dark-gray">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-sm">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center py-4">
+          <div class="flex items-center">
+            <h1 class="text-2xl font-bold text-ink">Ratio PBC</h1>
+          </div>
+          <div class="hidden md:flex space-x-8">
+            <a href="index.html" class="text-dark-gray hover:text-sunset">Home</a>
+            <a href="about.html" class="text-dark-gray hover:text-sunset">About</a>
+            <a href="services.html" class="text-dark-gray hover:text-sunset">Services</a>
+            <a href="products.html" class="text-ink hover:text-sunset font-medium">Products</a>
+            <a href="blog.html" class="text-dark-gray hover:text-sunset">Blog</a>
+            <a href="contact.html" class="text-dark-gray hover:text-sunset">Contact</a>
+          </div>
+          <div class="md:hidden">
+            <button class="text-dark-gray hover:text-sunset">
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-ink to-sunset text-white py-16">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center">
+          <h1 class="text-4xl md:text-5xl font-bold mb-6">Our Products</h1>
+          <p class="text-xl md:text-2xl max-w-3xl mx-auto opacity-90">
+            Purpose-built software solutions for public health and human services organizations.
+          </p>
+        </div>
+      </div>
+    </section>
+    <!-- Products Overview -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Proven Solutions</h2>
+          <p class="text-xl text-dark-gray">Software products designed specifically for the unique needs of public sector organizations</p>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-8">
+          <!-- HealthConnect -->
+          <div class="bg-cream p-8 rounded-lg">
+            <div class="w-16 h-16 bg-sunset rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-4">HealthConnect</h3>
+            <p class="text-dark-gray mb-6">Comprehensive public health surveillance and case management platform that streamlines disease monitoring, outbreak response, and reporting workflows.</p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Real-time disease surveillance
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Automated reporting to CDC
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Contact tracing workflows
+              </div>
+            </div>
+            <a href="product-healthconnect.html" class="inline-flex items-center text-sunset hover:text-ink font-medium">
+              Learn more
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- CareCoordinator -->
+          <div class="bg-cream p-8 rounded-lg">
+            <div class="w-16 h-16 bg-sunset rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-4">CareCoordinator</h3>
+            <p class="text-dark-gray mb-6">Integrated case management system for human services agencies that centralizes client information, tracks service delivery, and measures outcomes.</p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Unified client records
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Service coordination tools
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Outcome tracking & reporting
+              </div>
+            </div>
+            <a href="#" class="inline-flex items-center text-sunset hover:text-ink font-medium">
+              Learn more
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+          <!-- DataInsights -->
+          <div class="bg-cream p-8 rounded-lg">
+            <div class="w-16 h-16 bg-sunset rounded-lg flex items-center justify-center mb-6">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 8v8m-4-5v5m-4-2v2m-2 4h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-2xl font-bold text-ink mb-4">DataInsights</h3>
+            <p class="text-dark-gray mb-6">Advanced analytics and visualization platform that transforms complex public sector data into actionable insights for evidence-based decision making.</p>
+            <div class="space-y-2 mb-6">
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Interactive dashboards
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Predictive modeling
+              </div>
+              <div class="flex items-center text-sm text-dark-gray">
+                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                </svg>
+                Automated alerts
+              </div>
+            </div>
+            <a href="#" class="inline-flex items-center text-sunset hover:text-ink font-medium">
+              Learn more
+              <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Product Categories -->
+    <section class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Solutions by Category</h2>
+          <p class="text-xl text-dark-gray">Explore our products organized by use case and department</p>
+        </div>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div class="bg-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold text-ink mb-4">Public Health</h3>
+            <p class="text-dark-gray mb-6">Comprehensive solutions for health departments, from disease surveillance to emergency response.</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Disease Surveillance Systems</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Contact Tracing Platforms</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Immunization Management</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Emergency Response Tools</span>
+              </div>
+            </div>
+            <a href="#" class="text-sunset hover:text-ink font-medium">View public health products →</a>
+          </div>
+          <div class="bg-white p-8 rounded-lg">
+            <h3 class="text-2xl font-bold text-ink mb-4">Human Services</h3>
+            <p class="text-dark-gray mb-6">Integrated platforms for social services agencies to coordinate care and track outcomes.</p>
+            <div class="space-y-3 mb-6">
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Case Management Systems</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Benefits Administration</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Child Welfare Systems</span>
+              </div>
+              <div class="flex items-center">
+                <div class="w-2 h-2 bg-sunset rounded-full mr-3"></div>
+                <span class="text-dark-gray">Workforce Development</span>
+              </div>
+            </div>
+            <a href="#" class="text-sunset hover:text-ink font-medium">View human services products →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Implementation Approach -->
+    <section class="py-16 bg-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Our Implementation Approach</h2>
+          <p class="text-xl text-dark-gray">How we ensure successful product deployments</p>
+        </div>
+        <div class="grid md:grid-cols-4 gap-8">
+          <div class="text-center">
+            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ink mb-2">Assessment</h3>
+            <p class="text-dark-gray">We start by understanding your current systems, workflows, and specific requirements.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 100 4m0-4v2m0-6V4"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ink mb-2">Configuration</h3>
+            <p class="text-dark-gray">Our products are configured to match your organization's unique processes and requirements.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197m13.5-9a2.5 2.5 0 11-5 0 2.5 2.5 0 015 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ink mb-2">Training</h3>
+            <p class="text-dark-gray">Comprehensive training ensures your team can effectively use the new system from day one.</p>
+          </div>
+          <div class="text-center">
+            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mx-auto mb-4">
+              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-xl font-semibold text-ink mb-2">Support</h3>
+            <p class="text-dark-gray">Ongoing technical support and system maintenance to ensure optimal performance.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Customer Success -->
+    <section class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Customer Success</h2>
+          <p class="text-xl text-dark-gray">Real results from organizations using our products</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-white p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-sunset mb-2">75%</div>
+            <p class="text-dark-gray">Reduction in reporting time with HealthConnect</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-sunset mb-2">60%</div>
+            <p class="text-dark-gray">Faster case resolution with CareCoordinator</p>
+          </div>
+          <div class="bg-white p-6 rounded-lg text-center">
+            <div class="text-4xl font-bold text-sunset mb-2">90%</div>
+            <p class="text-dark-gray">User satisfaction across all products</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- CTA Section -->
+    <section class="py-16 bg-ink text-white">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to Transform Your Operations?</h2>
+        <p class="text-xl mb-8 opacity-90">Discover how our products can help your organization serve your community more effectively.</p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="contact.html" class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all">
+            Schedule a Demo
+          </a>
+          <a href="services.html" class="border-2 border-white text-white hover:bg-white hover:text-ink px-8 py-3 rounded-lg font-semibold transition-all">
+            Learn About Custom Solutions
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-dark-gray text-white py-12">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-4 gap-8">
+          <div>
+            <h3 class="text-xl font-bold mb-4">Ratio PBC</h3>
+            <p class="text-platinum">Building technology for public good.</p>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Products</h4>
+            <ul class="space-y-2 text-platinum">
+              <li><a href="product-healthconnect.html" class="hover:text-sunset">HealthConnect</a></li>
+              <li><a href="#" class="hover:text-sunset">CareCoordinator</a></li>
+              <li><a href="#" class="hover:text-sunset">DataInsights</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Company</h4>
+            <ul class="space-y-2 text-platinum">
+              <li><a href="about.html" class="hover:text-sunset">About Us</a></li>
+              <li><a href="services.html" class="hover:text-sunset">Services</a></li>
+              <li><a href="blog.html" class="hover:text-sunset">Blog</a></li>
+              <li><a href="contact.html" class="hover:text-sunset">Contact</a></li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-semibold mb-4">Connect</h4>
+            <ul class="space-y-2 text-platinum">
+              <li><a href="#" class="hover:text-sunset">LinkedIn</a></li>
+              <li><a href="#" class="hover:text-sunset">Twitter</a></li>
+              <li><a href="mailto:hello@ratiopbc.com" class="hover:text-sunset">hello@ratiopbc.com</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="border-t border-platinum mt-8 pt-8 text-center text-platinum">
+          <p>&copy; 2024 Ratio PBC. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
