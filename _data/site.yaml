@@ -1,0 +1,7 @@
+authors:
+  jesse:
+    name: Jesse Cooke
+
+post_types:
+  - name: Case Study
+  - name: Technology

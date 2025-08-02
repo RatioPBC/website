@@ -20,7 +20,7 @@ defmodule RatioPBC.BlogPage do
     </section>
 
     <!-- Featured Post -->
-    <section class="py-16 bg-white">
+    <section class="py-16 bg-white hidden">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <span class="text-sunset font-medium">Featured Post</span>
@@ -60,133 +60,34 @@ defmodule RatioPBC.BlogPage do
       </div>
     </section>
 
+
     <!-- Blog Posts Grid -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
+          <article :for={post <- @posts} class="bg-white rounded-lg overflow-hidden shadow-sm">
             <div class="h-48 bg-platinum"></div>
             <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Technology</div>
+              <div class="text-sm text-sunset font-medium mb-2">{ post.post_type }</div>
               <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  The Future of Government Data Analytics
+                <a href={ post.permalink } class="hover:text-sunset transition-colors">
+                  {post.title}
                 </a>
               </h3>
               <p class="text-dark-gray mb-4">
-                How artificial intelligence and machine learning are transforming how public agencies analyze and act on data.
+                {post.description}
               </p>
               <div class="flex items-center text-sm text-platinum">
-                <span>Marcus Rodriguez</span>
+                <span><%= Map.fetch!(@data["site"]["authors"], post.author) |> Map.fetch!("name") %></span>
                 <span class="mx-2">•</span>
-                <span>December 10, 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Case Study</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  Modernizing Child Welfare Systems: A Success Story
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                How we helped a state agency reduce case processing time by 60% while improving outcomes for families.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>Dr. Aisha Patel</span>
-                <span class="mx-2">•</span>
-                <span>December 5, 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Best Practices</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  User-Centered Design in Government Technology
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Why putting users first is essential for successful public sector technology projects.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>Sarah Chen</span>
-                <span class="mx-2">•</span>
-                <span>November 28, 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Industry Insights</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  The Rise of Public Benefit Corporations in Tech
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Exploring how the PBC model is changing the landscape of technology for social good.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>Marcus Rodriguez</span>
-                <span class="mx-2">•</span>
-                <span>November 20, 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Data Privacy</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  Protecting Sensitive Data in Public Health Systems
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Best practices for maintaining privacy and security while enabling data-driven decision making.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>Dr. Aisha Patel</span>
-                <span class="mx-2">•</span>
-                <span>November 15, 2024</span>
-              </div>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Innovation</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  Open Source Solutions for Government Agencies
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                How open source software can reduce costs and increase transparency in public sector technology.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>Sarah Chen</span>
-                <span class="mx-2">•</span>
-                <span>November 8, 2024</span>
+                <span class={}><%= Calendar.strftime(post.date, "%B %d, %Y") %></span>
               </div>
             </div>
           </article>
         </div>
-        
-    <!-- Pagination -->
-        <div class="flex justify-center mt-12">
+
+        <!-- Pagination -->
+        <div class="flex justify-center mt-12 hidden">
           <nav class="flex space-x-2">
             <button class="px-4 py-2 text-platinum hover:text-ink">Previous</button>
             <button class="px-4 py-2 bg-sunset text-white rounded">1</button>
