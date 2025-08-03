@@ -2,6 +2,8 @@ defmodule RatioPBC.PostLayout do
   use Tableau.Layout, layout: RatioPBC.RootLayout
   use Phoenix.Component
 
+  import Ratio.Components
+
   def template(assigns) do
     ~H"""
     <!-- Breadcrumb -->
@@ -71,50 +73,7 @@ defmodule RatioPBC.PostLayout do
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-ink mb-8 text-center">Related Articles</h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Technology</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="#" class="hover:text-sunset transition-colors">
-                  The Future of Government Data Analytics
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                How artificial intelligence and machine learning are transforming how public agencies analyze and act on data.
-              </p>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Best Practices</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="#" class="hover:text-sunset transition-colors">
-                  User-Centered Design in Government Technology
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Why putting users first is essential for successful public sector technology projects.
-              </p>
-            </div>
-          </article>
-
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">Data Privacy</div>
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="#" class="hover:text-sunset transition-colors">
-                  Protecting Sensitive Data in Public Health Systems
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Best practices for maintaining privacy and security while enabling data-driven decision making.
-              </p>
-            </div>
-          </article>
+          <.card :for={ post <- Ratio.related_posts(@posts, @page) } post={ post } data={ @data } />
         </div>
       </div>
     </section>

@@ -14,4 +14,14 @@ defmodule Ratio do
   def formatted_date(date) do
     Calendar.strftime(date, "%B %d, %Y")
   end
+
+  def related_posts(posts, post) do
+    Enum.filter(posts, fn p ->
+      MapSet.intersection(
+        MapSet.new(p.related),
+        MapSet.new(post.related)
+      )
+      |> Enum.empty?()
+    end)
+  end
 end

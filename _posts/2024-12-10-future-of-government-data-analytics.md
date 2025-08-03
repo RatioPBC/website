@@ -6,6 +6,7 @@ date: 2024-12-10
 description: "How artificial intelligence and machine learning are transforming how public agencies analyze and act on data."
 author: jesse
 post_type: Case Study
+related: ["2024-12-01-user-centered-design-in-government-technology"]
 ---
 
 When the COVID-19 pandemic struck in early 2020, public health departments across the country found themselves scrambling to respond to an unprecedented crisis. Many discovered that their technology infrastructure, built for routine operations, was inadequate for the scale and speed of response required.
