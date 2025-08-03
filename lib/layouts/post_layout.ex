@@ -48,7 +48,23 @@ defmodule RatioPBC.PostLayout do
       </div>
     </section>
 
-    {{:safe, render(@inner_content)}}
+    <article class="py-8 bg-white">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div id="article_content" class="prose prose-lg max-w-none">
+              {{:safe, render(@inner_content)}}
+            </div>
+            <div class="bg-ink text-white p-6 rounded-lg my-8">
+                <h3 class="text-xl font-semibold mb-3">Ready to Build Resilient Systems?</h3>
+                <p class="mb-4">
+                    If your organization is looking to modernize its public health technology infrastructure, we'd love to help. Our team has extensive experience building resilient systems for government agencies and public health organizations.
+                </p>
+                <a href="/contact" class="bg-sunset hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-semibold transition-all inline-block">
+                    Get In Touch
+                </a>
+            </div>
+        </div>
+    </article>
+
 
     <!-- Related Posts -->
     <section class="py-16 bg-cream">
