@@ -60,7 +60,6 @@ defmodule RatioPBC.BlogPage do
       </div>
     </section>
 
-
     <!-- Blog Posts Grid -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,9 +67,9 @@ defmodule RatioPBC.BlogPage do
           <article :for={post <- @posts} class="bg-white rounded-lg overflow-hidden shadow-sm">
             <div class="h-48 bg-platinum"></div>
             <div class="p-6">
-              <div class="text-sm text-sunset font-medium mb-2">{ post.post_type }</div>
+              <div class="text-sm text-sunset font-medium mb-2">{post.post_type}</div>
               <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href={ post.permalink } class="hover:text-sunset transition-colors">
+                <a href={post.permalink} class="hover:text-sunset transition-colors">
                   {post.title}
                 </a>
               </h3>
@@ -78,15 +77,15 @@ defmodule RatioPBC.BlogPage do
                 {post.description}
               </p>
               <div class="flex items-center text-sm text-platinum">
-                <span><%= Map.fetch!(@data["site"]["authors"], post.author) |> Map.fetch!("name") %></span>
+                <span>{Ratio.author_name(@data, post.author)}</span>
                 <span class="mx-2">•</span>
-                <span class={}><%= Calendar.strftime(post.date, "%B %d, %Y") %></span>
+                <span>{Ratio.formatted_date(post.date)}</span>
               </div>
             </div>
           </article>
         </div>
-
-        <!-- Pagination -->
+        
+    <!-- Pagination -->
         <div class="flex justify-center mt-12 hidden">
           <nav class="flex space-x-2">
             <button class="px-4 py-2 text-platinum hover:text-ink">Previous</button>

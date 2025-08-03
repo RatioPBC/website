@@ -8,42 +8,44 @@ defmodule RatioPBC.PostLayout do
     <section class="bg-white py-4 border-b">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <nav class="flex text-sm">
-          <a href="index.html" class="text-platinum hover:text-sunset">Home</a>
+          <a href="/" class="text-platinum hover:text-sunset">Home</a>
           <span class="mx-2 text-platinum">/</span>
-          <a href="blog.html" class="text-platinum hover:text-sunset">Blog</a>
+          <a href="/blog" class="text-platinum hover:text-sunset">Blog</a>
           <span class="mx-2 text-platinum">/</span>
-          <span class="text-dark-gray">Building Resilient Public Health Systems</span>
+          <span class="text-dark-gray">{@page.title}</span>
         </nav>
       </div>
     </section>
 
     <!-- Article Header -->
     <section class="py-12 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="text-center mb-8">
-                <div class="text-sunset font-medium mb-4">Featured Article</div>
-                <h1 class="text-4xl md:text-5xl font-bold text-ink mb-6">
-                    Building Resilient Public Health Systems: Lessons from the Pandemic
-                </h1>
-                <p class="text-xl text-dark-gray mb-8">
-                    The COVID-19 pandemic exposed critical gaps in public health infrastructure. Here's how modern technology can help build more resilient systems that better serve communities in times of crisis.
-                </p>
-                <div class="flex items-center justify-center text-sm text-platinum">
-                    <div class="flex items-center">
-                        <div class="w-10 h-10 bg-sunset rounded-full mr-3"></div>
-                        <div class="text-left">
-                <div class="text-dark-gray font-medium"><%= Map.fetch!(@data["site"]["authors"], @page.author) |> Map.fetch!("name") %></div>
-                            <div>CEO & Co-Founder</div>
-                        </div>
-                    </div>
-                    <span class="mx-4">•</span>
-                    <span>December 15, 2024</span>
-                    <span class="mx-4">•</span>
-                    <span>8 min read</span>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-8">
+          <div :if={@page[:featured]} class="text-sunset font-medium mb-4">Featured Article</div>
+          <h1 class="text-4xl md:text-5xl font-bold text-ink mb-6">
+            {@page.title}
+          </h1>
+          <p class="text-xl text-dark-gray mb-8">
+            {@page.description}
+          </p>
+          <div class="flex items-center justify-center text-sm text-platinum">
+            <div class="flex items-center">
+              <div class="w-10 h-10 bg-sunset rounded-full mr-3"></div>
+              <div class="text-left">
+                <div class="text-dark-gray font-medium">
+                  {Ratio.author_name(@data, @page.author)}
                 </div>
+                <div>
+                  {Ratio.author_title(@data, @page.author)}
+                </div>
+              </div>
             </div>
-            <div class="w-full h-64 md:h-96 bg-platinum rounded-lg mb-8"></div>
+            <span class="mx-4">•</span>
+            <span>{Ratio.formatted_date(@page.date)}</span>
+          </div>
         </div>
+        <div class="w-full h-64 md:h-96 bg-platinum rounded-lg mb-8"></div>
+      </div>
     </section>
 
     {{:safe, render(@inner_content)}}
