@@ -7,6 +7,15 @@ defmodule RatioPBC.HomePage do
 
   def template(assigns) do
     ~H"""
+    <.hero />
+    <.mission />
+    <.services />
+    <.cta />
+    """
+  end
+
+  def hero(assigns) do
+    ~H"""
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-ink to-sunset text-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +44,11 @@ defmodule RatioPBC.HomePage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def mission(assigns) do
+    ~H"""
     <!-- Mission Section -->
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -100,8 +113,12 @@ defmodule RatioPBC.HomePage do
         </div>
       </div>
     </section>
+    """
+  end
 
-    <!-- Services Preview -->
+  def services(assigns) do
+    ~H"""
+    <!-- Services -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -141,7 +158,11 @@ defmodule RatioPBC.HomePage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def cta(assigns) do
+    ~H"""
     <!-- CTA Section -->
     <section class="py-16 bg-ink text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
