@@ -82,8 +82,16 @@ defmodule RatioPBC.RootLayout do
               <div>
                 <h4 class="font-semibold mb-4">Connect</h4>
                 <ul class="space-y-2 text-platinum">
-                  <li><a href="#" class="hover:text-sunset">LinkedIn</a></li>
-                  <li><a href="#" class="hover:text-sunset">Twitter</a></li>
+                  <li>
+                    <a href="https://www.linkedin.com/company/ratiopbc/" class="hover:text-sunset">
+                      LinkedIn
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://bsky.app/profile/ratiopbc.com" class="hover:text-sunset">
+                      Bluesky
+                    </a>
+                  </li>
                   <li>
                     <a href="mailto:hello@ratiopbc.com" class="hover:text-sunset">
                       hello@ratiopbc.com
