@@ -101,7 +101,7 @@ defmodule RatioPBC.RootLayout do
               </div>
             </div>
             <div class="border-t border-platinum mt-8 pt-8 text-center text-platinum">
-              <p>&copy; 2024 Ratio PBC. All rights reserved.</p>
+              <p>&copy; 2025 Ratio PBC, Inc. All rights reserved.</p>
             </div>
           </div>
         </footer>
