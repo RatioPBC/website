@@ -66,17 +66,17 @@ defmodule RatioPBC.RootLayout do
               <div>
                 <h4 class="font-semibold mb-4">Services</h4>
                 <ul class="space-y-2 text-platinum">
-                  <li><a href="services.html" class="hover:text-sunset">Software Development</a></li>
-                  <li><a href="services.html" class="hover:text-sunset">Data Analytics</a></li>
-                  <li><a href="services.html" class="hover:text-sunset">System Integration</a></li>
+                  <li><a href="/services" class="hover:text-sunset">Software Development</a></li>
+                  <li><a href="/services" class="hover:text-sunset">Data Analytics</a></li>
+                  <li><a href="/services" class="hover:text-sunset">System Integration</a></li>
                 </ul>
               </div>
               <div>
                 <h4 class="font-semibold mb-4">Company</h4>
                 <ul class="space-y-2 text-platinum">
-                  <li><a href="about.html" class="hover:text-sunset">About Us</a></li>
-                  <li><a href="blog.html" class="hover:text-sunset">Blog</a></li>
-                  <li><a href="contact.html" class="hover:text-sunset">Contact</a></li>
+                  <li><a href="/about" class="hover:text-sunset">About Us</a></li>
+                  <li><a href="/blog" class="hover:text-sunset">Blog</a></li>
+                  <li><a href="/contact" class="hover:text-sunset">Contact</a></li>
                 </ul>
               </div>
               <div>

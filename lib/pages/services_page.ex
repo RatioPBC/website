@@ -312,7 +312,7 @@ defmodule RatioPBC.ServicesPage do
           Let's discuss how we can help modernize your organization's technology.
         </p>
         <a
-          href="contact.html"
+          href="/contact"
           class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all inline-block"
         >
           Schedule a Consultation
