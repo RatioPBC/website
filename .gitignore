@@ -26,3 +26,6 @@ tableau_new-*.tar
 /tmp/
 
 /_site
+
+/node_modules
+/dist
