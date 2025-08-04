@@ -88,6 +88,11 @@ defmodule RatioPBC.RootLayout do
                     </a>
                   </li>
                   <li>
+                    <a href="https://github.com/ratiopbc" class="hover:text-sunset">
+                      GitHub
+                    </a>
+                  </li>
+                  <li>
                     <a href="https://bsky.app/profile/ratiopbc.com" class="hover:text-sunset">
                       Bluesky
                     </a>
