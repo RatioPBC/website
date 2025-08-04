@@ -6,6 +6,18 @@ defmodule RatioPBC.ServicesPage do
   use Phoenix.Component
 
   def template(assigns) do
+    dbg(assigns)
+
+    ~H"""
+    <.hero />
+    <.services services={@data["site"]["services"]} />
+    <.process />
+    <.case_studies />
+    <.cta />
+    """
+  end
+
+  def hero(assigns) do
     ~H"""
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-ink to-sunset text-white py-16">
@@ -18,206 +30,93 @@ defmodule RatioPBC.ServicesPage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def service(assigns) do
+    ~H"""
+    <div class="bg-cream p-8 rounded-lg">
+      <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mb-6">
+        <.icon type={@service["icon"]} />
+      </div>
+      <h3 class="text-2xl font-bold text-ink mb-4">{@service["name"]}</h3>
+      <p class="text-dark-gray mb-6">
+        {@service["description"]}
+      </p>
+      <ul class="space-y-2 text-dark-gray">
+        <li :for={aspect <- @service["aspects"]} class="flex items-center">
+          <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
+            <path
+              fill-rule="evenodd"
+              d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
+              clip-rule="evenodd"
+            >
+            </path>
+          </svg>
+          {aspect}
+        </li>
+      </ul>
+    </div>
+    """
+  end
+
+  defp icon(%{type: "code"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+      >
+      </path>
+    </svg>
+    """
+  end
+
+  defp icon(%{type: "data"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      >
+      </path>
+    </svg>
+    """
+  end
+
+  defp icon(%{type: "terminal"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+      >
+      </path>
+    </svg>
+    """
+  end
+
+  def services(assigns) do
+    ~H"""
     <!-- Services Overview -->
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="grid lg:grid-cols-3 gap-8">
-          <div class="bg-cream p-8 rounded-lg">
-            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-                >
-                </path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-4">Custom Software Development</h3>
-            <p class="text-dark-gray mb-6">
-              We build tailored applications that fit your organization's unique workflows and requirements.
-            </p>
-            <ul class="space-y-2 text-dark-gray">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Web Applications
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Mobile Applications
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                API Development
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Legacy System Modernization
-              </li>
-            </ul>
-          </div>
-
-          <div class="bg-cream p-8 rounded-lg">
-            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-                >
-                </path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-4">Data Analytics & Visualization</h3>
-            <p class="text-dark-gray mb-6">
-              Transform your data into actionable insights with custom dashboards and reporting tools.
-            </p>
-            <ul class="space-y-2 text-dark-gray">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Interactive Dashboards
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Automated Reporting
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Data Warehousing
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Predictive Analytics
-              </li>
-            </ul>
-          </div>
-
-          <div class="bg-cream p-8 rounded-lg">
-            <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mb-6">
-              <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-                >
-                </path>
-              </svg>
-            </div>
-            <h3 class="text-2xl font-bold text-ink mb-4">System Integration</h3>
-            <p class="text-dark-gray mb-6">
-              Connect disparate systems and streamline data flow across your organization.
-            </p>
-            <ul class="space-y-2 text-dark-gray">
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                API Integration
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Data Migration
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Workflow Automation
-              </li>
-              <li class="flex items-center">
-                <svg class="w-4 h-4 text-sunset mr-2" fill="currentColor" viewBox="0 0 20 20">
-                  <path
-                    fill-rule="evenodd"
-                    d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                    clip-rule="evenodd"
-                  >
-                  </path>
-                </svg>
-                Cloud Migration
-              </li>
-            </ul>
-          </div>
+          <.service :for={service <- @services} service={service} />
         </div>
       </div>
     </section>
+    """
+  end
 
+  def process(assigns) do
+    ~H"""
     <!-- Process Section -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -265,7 +164,11 @@ defmodule RatioPBC.ServicesPage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def case_studies(assigns) do
+    ~H"""
     <!-- Case Studies Preview -->
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -303,7 +206,11 @@ defmodule RatioPBC.ServicesPage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def cta(assigns) do
+    ~H"""
     <!-- CTA Section -->
     <section class="py-16 bg-ink text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
