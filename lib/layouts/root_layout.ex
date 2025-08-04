@@ -19,6 +19,7 @@ defmodule RatioPBC.RootLayout do
         </title>
 
         <link rel="stylesheet" href="/css/site.css" />
+        <link rel="icon" href="/favicon.ico" />
       </head>
       <body class="bg-cream text-dark-gray">
         <.nav />
