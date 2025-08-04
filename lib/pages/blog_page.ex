@@ -9,6 +9,25 @@ defmodule RatioPBC.BlogPage do
 
   def template(assigns) do
     ~H"""
+    <.hero />
+
+    <!-- <.featured_post /> -->
+
+    <!-- Blog Posts Grid -->
+    <section class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <.card :for={post <- @posts} post={post} data={@data} />
+        </div>
+        
+    <!-- <.pagination /> -->
+      </div>
+    </section>
+    """
+  end
+
+  def hero(assigns) do
+    ~H"""
     <!-- Hero Section -->
     <section class="bg-gradient-to-r from-ink to-sunset text-white py-16">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -20,9 +39,13 @@ defmodule RatioPBC.BlogPage do
         </div>
       </div>
     </section>
+    """
+  end
 
+  def featured_post(assigns) do
+    ~H"""
     <!-- Featured Post -->
-    <section class="py-16 bg-white hidden">
+    <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="mb-8">
           <span class="text-sunset font-medium">Featured Post</span>
@@ -61,27 +84,26 @@ defmodule RatioPBC.BlogPage do
         </div>
       </div>
     </section>
+    """
+  end
 
-    <!-- Blog Posts Grid -->
-    <section class="py-16 bg-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <.card :for={ post <- @posts } post={ post } data={ @data } />
-        </div>
-        
+  def pagination(assigns) do
+    ~H"""
     <!-- Pagination -->
-        <div class="flex justify-center mt-12 hidden">
-          <nav class="flex space-x-2">
-            <button class="px-4 py-2 text-platinum hover:text-ink">Previous</button>
-            <button class="px-4 py-2 bg-sunset text-white rounded">1</button>
-            <button class="px-4 py-2 text-dark-gray hover:text-ink">2</button>
-            <button class="px-4 py-2 text-dark-gray hover:text-ink">3</button>
-            <button class="px-4 py-2 text-dark-gray hover:text-ink">Next</button>
-          </nav>
-        </div>
-      </div>
-    </section>
+    <div class="flex justify-center mt-12">
+      <nav class="flex space-x-2">
+        <button class="px-4 py-2 text-platinum hover:text-ink">Previous</button>
+        <button class="px-4 py-2 bg-sunset text-white rounded">1</button>
+        <button class="px-4 py-2 text-dark-gray hover:text-ink">2</button>
+        <button class="px-4 py-2 text-dark-gray hover:text-ink">3</button>
+        <button class="px-4 py-2 text-dark-gray hover:text-ink">Next</button>
+      </nav>
+    </div>
+    """
+  end
 
+  def newsletter(assigns) do
+    ~H"""
     <!-- Newsletter Signup -->
     <section class="py-16 bg-ink text-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
