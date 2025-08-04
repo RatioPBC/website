@@ -20,13 +20,13 @@ defmodule RatioPBC.HomePage do
           </p>
           <div class="flex flex-col sm:flex-row gap-4 justify-center">
             <a
-              href="services.html"
+              href="/services"
               class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all"
             >
               Our Services
             </a>
             <a
-              href="about.html"
+              href="/about"
               class="border-2 border-white text-white hover:bg-white hover:text-ink px-8 py-3 rounded-lg font-semibold transition-all"
             >
               Learn More
@@ -116,7 +116,7 @@ defmodule RatioPBC.HomePage do
             <p class="text-dark-gray mb-4">
               Tailored applications built to meet your organization's specific needs and workflows.
             </p>
-            <a href="services.html" class="text-sunset hover:text-ink font-medium">
+            <a href="/services" class="text-sunset hover:text-ink font-medium">
               Learn more →
             </a>
           </div>
@@ -125,7 +125,7 @@ defmodule RatioPBC.HomePage do
             <p class="text-dark-gray mb-4">
               Transform your data into actionable insights with custom dashboards and reporting tools.
             </p>
-            <a href="services.html" class="text-sunset hover:text-ink font-medium">
+            <a href="/services" class="text-sunset hover:text-ink font-medium">
               Learn more →
             </a>
           </div>
@@ -134,7 +134,7 @@ defmodule RatioPBC.HomePage do
             <p class="text-dark-gray mb-4">
               Connect disparate systems and streamline data flow across your organization.
             </p>
-            <a href="services.html" class="text-sunset hover:text-ink font-medium">
+            <a href="/services" class="text-sunset hover:text-ink font-medium">
               Learn more →
             </a>
           </div>
@@ -150,7 +150,7 @@ defmodule RatioPBC.HomePage do
           Let's discuss how we can help your organization serve your community more effectively.
         </p>
         <a
-          href="contact.html"
+          href="/contact"
           class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all inline-block"
         >
           Get In Touch
