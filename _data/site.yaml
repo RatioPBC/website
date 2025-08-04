@@ -33,3 +33,13 @@ services:
       - Data Migration
       - Workflow Automation
       - Cloud Migration
+
+our_process:
+  - name: Discovery
+    description: We start by understanding your organization's needs, challenges, and goals.
+  - name: Design
+    description: We create user-centered designs and technical architectures that solve real problems.
+  - name: Development
+    description: We build and test your solution using agile methodologies and best practices.
+  - name: Support
+    description: We provide ongoing maintenance, training, and support to ensure long-term success

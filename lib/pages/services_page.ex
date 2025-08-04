@@ -11,7 +11,7 @@ defmodule RatioPBC.ServicesPage do
     ~H"""
     <.hero />
     <.services services={@data["site"]["services"]} />
-    <.process />
+    <.our_process our_process={@data["site"]["our_process"]} />
     <.case_studies />
     <.cta />
     """
@@ -60,48 +60,6 @@ defmodule RatioPBC.ServicesPage do
     """
   end
 
-  defp icon(%{type: "code"} = assigns) do
-    ~H"""
-    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
-      >
-      </path>
-    </svg>
-    """
-  end
-
-  defp icon(%{type: "data"} = assigns) do
-    ~H"""
-    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
-      >
-      </path>
-    </svg>
-    """
-  end
-
-  defp icon(%{type: "terminal"} = assigns) do
-    ~H"""
-    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        stroke-width="2"
-        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
-      >
-      </path>
-    </svg>
-    """
-  end
-
   def services(assigns) do
     ~H"""
     <!-- Services Overview -->
@@ -115,7 +73,21 @@ defmodule RatioPBC.ServicesPage do
     """
   end
 
-  def process(assigns) do
+  defp process(assigns) do
+    ~H"""
+    <div class="text-center">
+      <div class="w-16 h-16 bg-ink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
+        {@index}
+      </div>
+      <h3 class="text-xl font-semibold text-ink mb-2">{@process["name"]}</h3>
+      <p class="text-dark-gray">
+        {@process["description"]}
+      </p>
+    </div>
+    """
+  end
+
+  def our_process(assigns) do
     ~H"""
     <!-- Process Section -->
     <section class="py-16 bg-cream">
@@ -125,42 +97,11 @@ defmodule RatioPBC.ServicesPage do
           <p class="text-xl text-dark-gray">How we work with you to deliver successful solutions</p>
         </div>
         <div class="grid md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="w-16 h-16 bg-ink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-              1
-            </div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Discovery</h3>
-            <p class="text-dark-gray">
-              We start by understanding your organization's needs, challenges, and goals.
-            </p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-ink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-              2
-            </div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Design</h3>
-            <p class="text-dark-gray">
-              We create user-centered designs and technical architectures that solve real problems.
-            </p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-ink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-              3
-            </div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Development</h3>
-            <p class="text-dark-gray">
-              We build and test your solution using agile methodologies and best practices.
-            </p>
-          </div>
-          <div class="text-center">
-            <div class="w-16 h-16 bg-ink text-white rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-              4
-            </div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Support</h3>
-            <p class="text-dark-gray">
-              We provide ongoing maintenance, training, and support to ensure long-term success.
-            </p>
-          </div>
+          <.process
+            :for={{process, index} <- Enum.with_index(@our_process, 1)}
+            process={process}
+            index={index}
+          />
         </div>
       </div>
     </section>
@@ -226,6 +167,48 @@ defmodule RatioPBC.ServicesPage do
         </a>
       </div>
     </section>
+    """
+  end
+
+  defp icon(%{type: "code"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"
+      >
+      </path>
+    </svg>
+    """
+  end
+
+  defp icon(%{type: "data"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"
+      >
+      </path>
+    </svg>
+    """
+  end
+
+  defp icon(%{type: "terminal"} = assigns) do
+    ~H"""
+    <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+      >
+      </path>
+    </svg>
     """
   end
 end
