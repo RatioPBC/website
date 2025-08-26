@@ -24,7 +24,7 @@ defmodule RatioPBC.MixProject do
   defp deps do
     [
       {:tableau, "~> 0.25"},
-      {:tailwind, "~> 0.3", runtime: Mix.env() == :dev},
+      {:tailwind, "~> 0.3"},
       {:phoenix_live_view, "~> 1.0"}
 
       # {:dep_from_hexpm, "~> 0.3.0"},
