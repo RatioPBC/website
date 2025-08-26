@@ -76,9 +76,9 @@ jobs:
           key: node-modules-${{ runner.os }}-netlify-cli
           restore-keys: node-modules-${{ runner.os }}-
       - name: Install Netlify CLI
-        run: npm install -g netlify-cli
+        run: npm install netlify-cli
       - name: Deploy to Netlify
-        run: netlify deploy --dir=_site --prod -m "https://github.com/RatioPBC/website/commit/${{ github.sha }}"
+        run: npx netlify deploy --dir=_site --prod -m "https://github.com/RatioPBC/website/commit/${{ github.sha }}"
         env:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
