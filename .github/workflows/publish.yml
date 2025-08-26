@@ -70,7 +70,7 @@ jobs:
         with:
           node-version: "latest"
       - name: Install Netlify CLI
-        run: npm install netlify-cli
+        run: npm install -g netlify-cli
       - name: Deploy to Netlify
         run: netlify deploy --dir=_site --prod -m "https://github.com/RatioPBC/website/commit/${{ github.sha }}"
         env:
