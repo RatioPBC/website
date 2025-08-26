@@ -1,7 +1,83 @@
-name: publish
+name: publish to netlify
 
 on:
   push:
     branches:
       - main
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build-elixir:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - uses: erlef/setup-beam@v1
+        with:
+          otp-version: "27.3"
+          elixir-version: "v1.18.4-otp-27"
+      - name: Elixir Deps Cache
+        id: elixir-deps-cache
+        uses: actions/cache@v4
+        with:
+          path: |
+            deps
+            _build
+            .mix/archives/
+          key: elixir-build-${{hashFiles('.tool-versions')}}-${{hashFiles('mix.lock')}}
+          restore-keys: elixir-build-${{hashFiles('.tool-versions')}}-
+
+      - name: Install Elixir Dependencies
+        run: |
+          mix local.hex --force --if-missing
+          mix deps.get --only prod
+
+      - name: "Build Tableau"
+        env:
+          MIX_ENV: prod
+        run: |
+          mix tableau.build
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          path: ./_site
+          if-no-files-found: error
+          name: site-elixir
+
+  build-assets:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+
+  deploy-netlify:
+    needs:
+      - build-elixir
+    runs-on: ubuntu-latest
+    environment:
+      name: netlfiy-prod
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/download-artifact@v4
+        with:
+          path: _site/
+          pattern: site-*
+          merge-multiple: true
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "latest"
+      - name: Install Netlify CLI
+        run: npm install netlify-cli --save-dev
+      - name: Deploy to Netlify
+        run: netlify deploy --dir=_site --prod -m "https://github.com/RatioPBC/website/commit/${{ github.sha }}"
+        env:
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
