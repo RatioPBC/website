@@ -1,7 +1,7 @@
 ---
 name: Blog Post
 about: Create a new blog post task for tracking in GitHub Projects
-title: '[BLOG] '
+title: "[BLOG] "
 labels: blog
 assignees: ''
 
@@ -120,4 +120,3 @@ assignees: ''
 ## Notes & Comments
 
 <!-- Any additional context, special requirements, or notes for the team -->
-
