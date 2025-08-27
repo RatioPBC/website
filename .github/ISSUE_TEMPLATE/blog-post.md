@@ -45,87 +45,80 @@ body:
     attributes:
       label: Target Audience
       description: Describe the primary audience
-      render: shell
   - type: textarea
     id: goal
     attributes:
       label: Primary Goal
       description: What's the main objective? (e.g., drive traffic, generate leads, educate, brand awareness)
-      render: shell
+  - type: textarea
+    id: key-points
+    attributes:
+      label: Key Points to cover
+      value: |
+        - [ ] Point 1
+        - [ ] Point 2
+        - [ ] Point 3
+        - [ ] Point 4
+  - type: textarea
+    id: research-links
+    attributes:
+      label: Research Links
+      description: Add any reference materials, sources, or inspiration
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: internal-links
+    attributes:
+      label: Internal Links
+      description: List any existing blog posts or pages to link to
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: external-links
+    attributes:
+      label: External Links
+      description: list any external sources to reference or link to
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: production-checklist
+    attributes:
+      label: Production Checklist
+      value: |
+        ### Writing Phase
+        - [ ] Outline approved
+        - [ ] First draft complete
+        - [ ] Internal review complete
+        - [ ] Revisions complete
+        - [ ] Final draft approved
 
+        ### Pre-Publication
+        - [ ] Proofread and edited
+        - [ ] SEO optimization complete
+        - [ ] Meta description written
+        - [ ] Featured image ready
+        - [ ] Internal links added
+        - [ ] External links verified
+
+        ### Publishing
+        - [ ] Publish
+        - [ ] URL structure confirmed
+        - [ ] Categories/tags applied
+        - [ ] Author bio updated
+
+        ### Promotion
+        - [ ] Social media posts scheduled
+          - [ ] Blue Sky
+          - [ ] LinkedIn
+        - [ ] Email newsletter inclusion
+        - [ ] Slack/internal announcement
+        - [ ] Added to content calendar
+  - type: textarea
+    id: notes
+    attributes:
+      label: external links
+      description: Any additional context, special requirements, or notes for the team 
 ---
-
-## Content Outline
-
-**Key Points to Cover:**
-- [ ] Point 1
-- [ ] Point 2
-- [ ] Point 3
-- [ ] Point 4
-
-**Call-to-Action (CTA):**
-<!-- What action should readers take after reading? -->
-
-## Resources & References
-
-**Research Links:**
-<!-- Add any reference materials, sources, or inspiration -->
-- 
-- 
-
-**Internal Links:**
-<!-- List any existing blog posts or pages to link to -->
-- 
-- 
-
-**External Links:**
-<!-- List any external sources to reference or link to -->
-- 
-- 
-
-## Visual Assets
-
-**Featured Image:**
-- [ ] Stock photo
-- [ ] Custom graphic
-- [ ] Screenshot
-- [ ] Infographic
-- [ ] Other: ___________
-
-**Additional Images/Media:**
-<!-- Describe any other visual elements needed -->
-
-## Production Checklist
-
-### Writing Phase
-- [ ] Outline approved
-- [ ] First draft complete
-- [ ] Internal review complete
-- [ ] Revisions complete
-- [ ] Final draft approved
-
-### Pre-Publication
-- [ ] Proofread and edited
-- [ ] SEO optimization complete
-- [ ] Meta description written
-- [ ] Featured image ready
-- [ ] Internal links added
-- [ ] External links verified
-
-### Publishing
-- [ ] Publish
-- [ ] URL structure confirmed
-- [ ] Categories/tags applied
-- [ ] Author bio updated
-
-### Promotion
-- [ ] Social media posts scheduled
-  - [ ] Blue Sky
-  - [ ] LinkedIn
-- [ ] Email newsletter inclusion
-- [ ] Slack/internal announcement
-- [ ] Added to content calendar
-
-## Notes & Comments
-
-<!-- Any additional context, special requirements, or notes for the team -->
