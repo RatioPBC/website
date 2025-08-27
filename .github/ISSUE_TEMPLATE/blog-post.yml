@@ -1,8 +1,7 @@
 name: Blog Post
 description: Create a new blog post
 title: "[BLOG]: "
-labels:
-  - blog
+type: "Blog Post"
 projects:
   - RatioPBC/23
 body:
