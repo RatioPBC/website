@@ -2,7 +2,8 @@
 name: Blog Post
 about: Create a new blog post task for tracking in GitHub Projects
 title: "[BLOG] "
-labels: blog
+labels: ["blog"]
+projects: ["RatioPBC/23"]
 assignees: ''
 
 ---
