@@ -1,51 +1,59 @@
 ---
 name: Blog Post
-about: Create a new blog post task for tracking in GitHub Projects
-title: "[BLOG] "
+about: Create a new blog post
+title: "[BLOG]: "
 labels: ["blog"]
 projects: ["RatioPBC/23"]
 assignees: ''
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Working Title
+      description: Proposed title of post
+      placeholder: Why we build data widgets...
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content Type
+      options:
+        - How-to/Tutorial
+        - Industry News/Trends
+        - Case Study
+        - Product Update
+        - Thought Leadership
+        - Company News
+        - Other
+      default: 4
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Describe the primary audience
+      render: shell
+  - type: textarea
+    id: goal
+    attributes:
+      label: Primary Goal
+      description: What's the main objective? (e.g., drive traffic, generate leads, educate, brand awareness)
+      render: shell
 
 ---
-
-## Blog Post Details
-
-**Working Title:** 
-<!-- Enter the proposed title of the blog post -->
-
-**Target Publish Date:** 
-<!-- YYYY-MM-DD -->
-
-**Author(s):** 
-<!-- @mention GitHub usernames -->
-
-**Priority:** 
-- [ ] High
-- [ ] Medium  
-- [ ] Low
-
-**Content Type:**
-- [ ] How-to/Tutorial
-- [ ] Industry News/Trends
-- [ ] Case Study
-- [ ] Product Update
-- [ ] Thought Leadership
-- [ ] Company News
-- [ ] Other: ___________
-
-## Content Strategy
-
-**Target Audience:**
-<!-- Describe the primary audience for this post -->
-
-**Primary Goal:**
-<!-- What's the main objective? (e.g., drive traffic, generate leads, educate, brand awareness) -->
-
-**Keywords/SEO:**
-<!-- List target keywords for SEO -->
-
-**Related Campaign/Initiative:**
-<!-- Link to any related marketing campaigns or business initiatives -->
 
 ## Content Outline
 
