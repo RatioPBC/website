@@ -1,9 +1,10 @@
 name: Blog Post
-about: Create a new blog post
+description: Create a new blog post
 title: "[BLOG]: "
-labels: ["blog"]
-projects: ["RatioPBC/23"]
-assignees: ''
+labels:
+  - blog
+projects:
+  - RatioPBC/23
 body:
   - type: input
     id: title
