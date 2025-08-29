@@ -22,7 +22,7 @@ defmodule RatioPBC.RootLayout do
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body class="bg-cream text-dark-gray">
-        <.nav />
+        <.nav pages={@data["site"]["nav"]} />
         {render(@inner_content)}
         <.footer />
 
@@ -45,24 +45,14 @@ defmodule RatioPBC.RootLayout do
             <h1 class="text-2xl font-bold text-ink">Ratio PBC</h1>
           </div>
           <div class="hidden md:flex space-x-8">
-            <a href="/" class="text-ink hover:text-sunset font-medium">Home</a>
-            <a href="/about" class="text-dark-gray hover:text-sunset">About</a>
-            <a href="/services" class="text-dark-gray hover:text-sunset">Services</a>
-            <a href="/blog" class="text-dark-gray hover:text-sunset">Blog</a>
-            <a href="/contact" class="text-dark-gray hover:text-sunset">Contact</a>
+            <.link :for={page <- @pages} navigate={page["path"]}>{page["name"]}</.link>
           </div>
           <div class="md:hidden">
-            <button class="text-dark-gray hover:text-sunset">
-              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M4 6h16M4 12h16M4 18h16"
-                >
-                </path>
-              </svg>
-            </button>
+            <ul>
+              <li :for={page <- @pages}>
+                <.link navigate={page["path"]}>{page["name"]}</.link>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

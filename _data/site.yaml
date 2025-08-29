@@ -3,6 +3,18 @@ authors:
     name: Jesse Cooke
     title: CTO & Co-Founder
 
+nav:
+  - name: Home
+    path: /
+  - name: About
+    path: /about
+  - name: Services
+    path: /services
+  - name: Blog
+    path: /blog
+  - name: Contact
+    path: /contact
+
 post_types:
   - name: Case Study
   - name: Technology
