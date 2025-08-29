@@ -6,8 +6,6 @@ defmodule RatioPBC.ServicesPage do
   use Phoenix.Component
 
   def template(assigns) do
-    dbg(assigns)
-
     ~H"""
     <.hero />
     <.services services={@data["site"]["services"]} />
