@@ -40,4 +40,6 @@ defmodule Ratio do
       |> Enum.empty?()
     end)
   end
+
+  def email, do: "hello@ratiopbc.com"
 end

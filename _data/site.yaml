@@ -7,8 +7,6 @@ nav:
     path: /services
   - name: Blog
     path: /blog
-  - name: Contact
-    path: /contact
 
 post_types:
   - name: Case Study
@@ -21,3 +19,5 @@ external_links:
     url: https://github.com/RatioPBC
   - name: Bluesky
     url: https://bsky.app/profile/ratiopbc.com
+
+email: hello@ratiopbc.com
