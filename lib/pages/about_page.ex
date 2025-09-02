@@ -124,35 +124,9 @@ defmodule RatioPBC.AboutPage do
           <p class="text-xl text-dark-gray">Common questions about working with Ratio PBC</p>
         </div>
         <div class="max-w-3xl mx-auto space-y-6">
-          <div class="bg-white p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-ink mb-3">
-              What types of organizations do you work with?
-            </h3>
-            <p class="text-dark-gray">
-              We primarily work with public health departments, human services agencies, nonprofits, and other organizations focused on serving communities and the public good.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-ink mb-3">How long do projects typically take?</h3>
-            <p class="text-dark-gray">
-              Project timelines vary based on scope and complexity. Simple integrations might take 2-3 months, while comprehensive custom applications can take 6-12 months or more. We'll provide a detailed timeline during our initial consultation.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-ink mb-3">
-              Do you provide ongoing support after launch?
-            </h3>
-            <p class="text-dark-gray">
-              Yes, we offer comprehensive support and maintenance packages to ensure your systems continue to operate smoothly. This includes bug fixes, security updates, and feature enhancements.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg">
-            <h3 class="text-xl font-semibold text-ink mb-3">
-              Can you work with our existing systems?
-            </h3>
-            <p class="text-dark-gray">
-              Absolutely. We specialize in integrating with existing systems and can help modernize legacy applications while preserving your valuable data and workflows.
-            </p>
+          <div :for={faq <- @data["faqs"]} class="bg-white p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-ink mb-3">{faq["question"]}</h3>
+            <p class="text-dark-gray">{faq["answer"]}</p>
           </div>
         </div>
       </div>
