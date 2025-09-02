@@ -116,29 +116,43 @@ defmodule RatioPBC.AboutPage do
       </div>
     </section>
 
-    <!-- Impact Section -->
-    <section class="py-16 bg-white">
+    <!-- FAQ Section -->
+    <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
-          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Our Impact</h2>
-          <p class="text-xl text-dark-gray">Measuring success by the communities we serve</p>
+          <h2 class="text-3xl md:text-4xl font-bold text-ink mb-4">Frequently Asked Questions</h2>
+          <p class="text-xl text-dark-gray">Common questions about working with Ratio PBC</p>
         </div>
-        <div class="grid md:grid-cols-4 gap-8 text-center">
-          <div>
-            <div class="text-4xl font-bold text-sunset mb-2">25+</div>
-            <p class="text-dark-gray">Organizations Served</p>
+        <div class="max-w-3xl mx-auto space-y-6">
+          <div class="bg-white p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-ink mb-3">
+              What types of organizations do you work with?
+            </h3>
+            <p class="text-dark-gray">
+              We primarily work with public health departments, human services agencies, nonprofits, and other organizations focused on serving communities and the public good.
+            </p>
           </div>
-          <div>
-            <div class="text-4xl font-bold text-sunset mb-2">500K+</div>
-            <p class="text-dark-gray">People Reached</p>
+          <div class="bg-white p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-ink mb-3">How long do projects typically take?</h3>
+            <p class="text-dark-gray">
+              Project timelines vary based on scope and complexity. Simple integrations might take 2-3 months, while comprehensive custom applications can take 6-12 months or more. We'll provide a detailed timeline during our initial consultation.
+            </p>
           </div>
-          <div>
-            <div class="text-4xl font-bold text-sunset mb-2">15</div>
-            <p class="text-dark-gray">States & Territories</p>
+          <div class="bg-white p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-ink mb-3">
+              Do you provide ongoing support after launch?
+            </h3>
+            <p class="text-dark-gray">
+              Yes, we offer comprehensive support and maintenance packages to ensure your systems continue to operate smoothly. This includes bug fixes, security updates, and feature enhancements.
+            </p>
           </div>
-          <div>
-            <div class="text-4xl font-bold text-sunset mb-2">98%</div>
-            <p class="text-dark-gray">Client Satisfaction</p>
+          <div class="bg-white p-6 rounded-lg">
+            <h3 class="text-xl font-semibold text-ink mb-3">
+              Can you work with our existing systems?
+            </h3>
+            <p class="text-dark-gray">
+              Absolutely. We specialize in integrating with existing systems and can help modernize legacy applications while preserving your valuable data and workflows.
+            </p>
           </div>
         </div>
       </div>
@@ -150,7 +164,7 @@ defmodule RatioPBC.AboutPage do
         <h2 class="text-3xl md:text-4xl font-bold mb-4">Join Our Mission</h2>
         <p class="text-xl mb-8 opacity-90">Ready to make technology work for the public good?</p>
         <a
-          href="contact.html"
+          href={"mailto:" <> Ratio.email()}
           class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all inline-block"
         >
           Work With Us
