@@ -1,8 +1,3 @@
-authors:
-  jesse:
-    name: Jesse Cooke
-    title: CTO & Co-Founder
-
 nav:
   - name: Home
     path: /
@@ -18,40 +13,3 @@ nav:
 post_types:
   - name: Case Study
   - name: Technology
-
-services:
-  - name: Custom Software Development
-    description: We build tailored applications that fit your organization's unique workflows and requirements.
-    icon: code
-    aspects:
-      - Web Applications
-      - Mobile Applications
-      - API Development
-      - Legacy System Modernization
-  - name: Data & Analytics Engineering
-    description: Transform your data into actionable insights with custom dashboards and reporting tools.
-    icon: data
-    aspects:
-      - Interactive Dashboards
-      - Automated Reporting
-      - Data Warehousing
-      - Predictive Analytics
-
-  - name: System Integration
-    description: Connect disparate systems and streamline data flow across your organization.
-    icon: terminal
-    aspects:
-      - API Integration
-      - Data Migration
-      - Workflow Automation
-      - Cloud Migration
-
-our_process:
-  - name: Discovery
-    description: We start by understanding your organization's needs, challenges, and goals.
-  - name: Design
-    description: We create user-centered designs and technical architectures that solve real problems.
-  - name: Development
-    description: We build and test your solution using agile methodologies and best practices.
-  - name: Support
-    description: We provide ongoing maintenance, training, and support to ensure long-term success

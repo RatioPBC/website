@@ -8,8 +8,8 @@ defmodule RatioPBC.ServicesPage do
   def template(assigns) do
     ~H"""
     <.hero />
-    <.services services={@data["site"]["services"]} />
-    <.our_process our_process={@data["site"]["our_process"]} />
+    <.services services={@data["services"]} />
+    <.our_process our_process={@data["our_process"]} />
     <.case_studies />
     <.cta />
     """

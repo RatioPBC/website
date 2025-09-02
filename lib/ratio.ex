@@ -8,7 +8,7 @@ defmodule Ratio do
   end
 
   def author(data, short_name) do
-    Map.fetch!(data["site"]["authors"], short_name)
+    Map.fetch!(data["authors"], short_name)
   end
 
   def formatted_date(date) do
