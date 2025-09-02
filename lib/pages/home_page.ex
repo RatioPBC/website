@@ -5,11 +5,13 @@ defmodule RatioPBC.HomePage do
 
   use Phoenix.Component
 
+  import Ratio.Components
+
   def template(assigns) do
     ~H"""
     <.hero />
     <.mission />
-    <.services />
+    <.services services={@data["services"]} />
     <.cta />
     """
   end
@@ -128,32 +130,16 @@ defmodule RatioPBC.HomePage do
           </p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-semibold text-ink mb-3">Custom Software Development</h3>
-            <p class="text-dark-gray mb-4">
-              Tailored applications built to meet your organization's specific needs and workflows.
-            </p>
-            <a href="/services" class="text-sunset hover:text-ink font-medium">
+          <div :for={service <- @services} class="bg-white p-6 rounded-lg shadow-sm">
+            <h3 class="text-xl font-semibold text-ink mb-3">{service["name"]}</h3>
+            <p class="text-dark-gray mb-4">{service["description"]}</p>
+            <.service_link
+              service={service}
+              class="text-sunset hover:text-ink font-medium"
+            >
               Learn more →
-            </a>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-semibold text-ink mb-3">Data Analytics & Visualization</h3>
-            <p class="text-dark-gray mb-4">
-              Transform your data into actionable insights with custom dashboards and reporting tools.
-            </p>
-            <a href="/services" class="text-sunset hover:text-ink font-medium">
-              Learn more →
-            </a>
-          </div>
-          <div class="bg-white p-6 rounded-lg shadow-sm">
-            <h3 class="text-xl font-semibold text-ink mb-3">System Integration</h3>
-            <p class="text-dark-gray mb-4">
-              Connect disparate systems and streamline data flow across your organization.
-            </p>
-            <a href="/services" class="text-sunset hover:text-ink font-medium">
-              Learn more →
-            </a>
+            </.service_link>
+            
           </div>
         </div>
       </div>

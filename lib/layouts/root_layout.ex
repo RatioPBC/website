@@ -2,6 +2,8 @@ defmodule RatioPBC.RootLayout do
   use Tableau.Layout
   use Phoenix.Component
 
+  import Ratio.Components
+
   def template(assigns) do
     ~H"""
     <!DOCTYPE html>
@@ -49,7 +51,7 @@ defmodule RatioPBC.RootLayout do
             <h1 class="text-2xl font-bold text-ink">Ratio PBC</h1>
           </div>
           <div class="hidden md:flex space-x-8">
-            <.link :for={page <- @pages} navigate={page["path"]}>{page["name"]}</.link>
+            <.link :for={page <- @pages} navigate={page["path"]} rel="prefetch">{page["name"]}</.link>
           </div>
           <div class="md:hidden">
             <ul>
@@ -78,12 +80,12 @@ defmodule RatioPBC.RootLayout do
             <h4 class="font-semibold mb-4">Services</h4>
             <ul class="space-y-2 text-platinum">
               <li :for={service <- @services}>
-                <a
-                  href={"/services" <> Ratio.fragment_from_name(service["name"])}
+                <.service_link
+                  service={service}
                   class="hover:text-sunset"
                 >
                   {service["name"]}
-                </a>
+                </.service_link>
               </li>
             </ul>
           </div>

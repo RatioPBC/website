@@ -27,4 +27,18 @@ defmodule Ratio.Components do
     </article>
     """
   end
+
+  slot(:inner_block, required: true)
+  attr(:service, :map, required: true)
+  attr(:class, :string)
+  def service_link(assigns) do
+    ~H"""
+    <.link
+      navigate={"/services" <> Ratio.fragment_from_name(@service["name"])}
+      class={@class}
+    >
+      {render_slot(@inner_block, @service)}
+    </.link>
+    """
+  end
 end
