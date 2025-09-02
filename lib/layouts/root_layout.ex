@@ -22,9 +22,13 @@ defmodule RatioPBC.RootLayout do
         <link rel="icon" href="/favicon.ico" />
       </head>
       <body class="bg-cream text-dark-gray">
-        <.nav pages={@data["site"]["nav"]} />
+        <.nav pages={Ratio.all_pages(@data)} />
         {render(@inner_content)}
-        <.footer external_links={@data["site"]["external_links"]} services={@data["services"]} />
+        <.footer
+          external_links={@data["site"]["external_links"]}
+          services={@data["services"]}
+          company_links={Ratio.pages_by_names(@data, ["About", "Blog", "Contact"])}
+        />
 
         <%= if Mix.env() == :dev do %>
           {Phoenix.HTML.raw(Tableau.live_reload(assigns))}
@@ -86,9 +90,11 @@ defmodule RatioPBC.RootLayout do
           <div>
             <h4 class="font-semibold mb-4">Company</h4>
             <ul class="space-y-2 text-platinum">
-              <li><a href="/about" class="hover:text-sunset">About Us</a></li>
-              <li><a href="/blog" class="hover:text-sunset">Blog</a></li>
-              <li><a href="/contact" class="hover:text-sunset">Contact</a></li>
+              <li :for={link <- @company_links}>
+                <.link navigate={link["path"]} class="hover:text-sunset">
+                  {link["name"]}
+                </.link>
+              </li>
             </ul>
           </div>
           <div>
@@ -110,8 +116,9 @@ defmodule RatioPBC.RootLayout do
 
   defp copyright(assigns) do
     assigns = Map.put(assigns, :year, Date.utc_today().year)
+
     ~H"""
-      <p>&copy; {@year} Ratio PBC, Inc. All rights reserved.</p>
+    <p>&copy; {@year} Ratio PBC, Inc. All rights reserved.</p>
     """
   end
 end

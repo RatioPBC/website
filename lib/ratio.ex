@@ -24,6 +24,13 @@ defmodule Ratio do
     "#" <> fragment
   end
 
+  def pages_by_names(data, names) do
+    all_pages(data)
+    |> Enum.filter(&(&1["name"] in names))
+  end
+
+  def all_pages(data), do: get_in(data, ["site", "nav"])
+
   def related_posts(posts, post) do
     Enum.filter(posts, fn p ->
       MapSet.intersection(
