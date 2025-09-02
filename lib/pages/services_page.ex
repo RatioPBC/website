@@ -33,7 +33,7 @@ defmodule RatioPBC.ServicesPage do
 
   def service(assigns) do
     ~H"""
-    <div class="bg-cream p-8 rounded-lg">
+    <div id={Ratio.fragment_from_name(@service["name"])} class="bg-cream p-8 rounded-lg">
       <div class="w-16 h-16 bg-sunset rounded-full flex items-center justify-center mb-6">
         <.icon type={@service["icon"]} />
       </div>

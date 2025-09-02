@@ -24,7 +24,7 @@ defmodule RatioPBC.RootLayout do
       <body class="bg-cream text-dark-gray">
         <.nav pages={@data["site"]["nav"]} />
         {render(@inner_content)}
-        <.footer />
+        <.footer services={@data["services"]} />
 
         <%= if Mix.env() == :dev do %>
           {Phoenix.HTML.raw(Tableau.live_reload(assigns))}
@@ -73,9 +73,14 @@ defmodule RatioPBC.RootLayout do
           <div>
             <h4 class="font-semibold mb-4">Services</h4>
             <ul class="space-y-2 text-platinum">
-              <li><a href="/services" class="hover:text-sunset">Software Development</a></li>
-              <li><a href="/services" class="hover:text-sunset">Data Analytics</a></li>
-              <li><a href="/services" class="hover:text-sunset">System Integration</a></li>
+              <li :for={service <- @services}>
+                <a
+                  href={"/services" <> Ratio.fragment_from_name(service["name"])}
+                  class="hover:text-sunset"
+                >
+                  {service["name"]}
+                </a>
+              </li>
             </ul>
           </div>
           <div>

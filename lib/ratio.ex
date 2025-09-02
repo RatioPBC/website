@@ -15,6 +15,15 @@ defmodule Ratio do
     Calendar.strftime(date, "%B %d, %Y")
   end
 
+  def fragment_from_name(name) do
+    fragment =
+      String.downcase(name)
+      |> String.replace(" ", "-")
+      |> String.replace("&", "and")
+
+    "#" <> fragment
+  end
+
   def related_posts(posts, post) do
     Enum.filter(posts, fn p ->
       MapSet.intersection(
