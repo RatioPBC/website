@@ -24,7 +24,7 @@ defmodule RatioPBC.RootLayout do
       <body class="bg-cream text-dark-gray">
         <.nav pages={@data["site"]["nav"]} />
         {render(@inner_content)}
-        <.footer services={@data["services"]} />
+        <.footer external_links={@data["site"]["external_links"]} services={@data["services"]} />
 
         <%= if Mix.env() == :dev do %>
           {Phoenix.HTML.raw(Tableau.live_reload(assigns))}
@@ -94,34 +94,24 @@ defmodule RatioPBC.RootLayout do
           <div>
             <h4 class="font-semibold mb-4">Connect</h4>
             <ul class="space-y-2 text-platinum">
-              <li>
-                <a href="https://www.linkedin.com/company/ratiopbc/" class="hover:text-sunset">
-                  LinkedIn
-                </a>
-              </li>
-              <li>
-                <a href="https://github.com/ratiopbc" class="hover:text-sunset">
-                  GitHub
-                </a>
-              </li>
-              <li>
-                <a href="https://bsky.app/profile/ratiopbc.com" class="hover:text-sunset">
-                  Bluesky
-                </a>
-              </li>
-              <li>
-                <a href="mailto:hello@ratiopbc.com" class="hover:text-sunset">
-                  hello@ratiopbc.com
-                </a>
+              <li :for={link <- @external_links}>
+                <a href={link["url"]} class="hover:text-sunset">{link["name"]}</a>
               </li>
             </ul>
           </div>
         </div>
         <div class="border-t border-platinum mt-8 pt-8 text-center text-platinum">
-          <p>&copy; 2025 Ratio PBC, Inc. All rights reserved.</p>
+          <.copyright />
         </div>
       </div>
     </footer>
+    """
+  end
+
+  defp copyright(assigns) do
+    assigns = Map.put(assigns, :year, Date.utc_today().year)
+    ~H"""
+      <p>&copy; {@year} Ratio PBC, Inc. All rights reserved.</p>
     """
   end
 end

@@ -13,3 +13,11 @@ nav:
 post_types:
   - name: Case Study
   - name: Technology
+
+external_links:
+  - name: LinkedIn
+    url: https://www.linkedin.com/company/ratiopbc/
+  - name: GitHub
+    url: https://github.com/RatioPBC
+  - name: Bluesky
+    url: https://bsky.app/profile/ratiopbc.com
