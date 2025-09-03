@@ -3,8 +3,11 @@ defmodule RatioPBC.TeamLayout do
   use Phoenix.Component
 
   def template(assigns) do
+    id = assigns.page.id
     assigns =
-      Map.put(assigns, :person, Ratio.person_by_id(assigns.data, "jesse"))
+      assigns
+      |> Map.put(:person, Ratio.person_by_id(assigns.data, id))
+      |> Map.put(:articles, Ratio.posts_by_author_id(assigns.posts, id))
     ~H"""
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -156,39 +159,21 @@ defmodule RatioPBC.TeamLayout do
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-ink mb-8">Recent Articles by {@person["first_name"]}</h2>
         <div class="grid md:grid-cols-2 gap-8">
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
+          <article :for={article <- @articles} class="bg-white rounded-lg overflow-hidden shadow-sm">
             <div class="h-48 bg-platinum"></div>
             <div class="p-6">
               <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="post.html" class="hover:text-sunset transition-colors">
-                  Building Resilient Public Health Systems: Lessons from the Pandemic
+                <a href={article.permalink} class="hover:text-sunset transition-colors">
+                  {article.title}
                 </a>
               </h3>
               <p class="text-dark-gray mb-4">
-                The COVID-19 pandemic exposed critical gaps in public health infrastructure. Here's how modern technology can help build more resilient systems.
+                {article.description}
               </p>
               <div class="flex items-center text-sm text-platinum">
-                <span>December 15, 2024</span>
+                <span>{Ratio.formatted_date(article.date)}</span>
                 <span class="mx-2">•</span>
-                <span>8 min read</span>
-              </div>
-            </div>
-          </article>
-          <article class="bg-white rounded-lg overflow-hidden shadow-sm">
-            <div class="h-48 bg-platinum"></div>
-            <div class="p-6">
-              <h3 class="text-xl font-semibold text-ink mb-3">
-                <a href="#" class="hover:text-sunset transition-colors">
-                  User-Centered Design in Government Technology
-                </a>
-              </h3>
-              <p class="text-dark-gray mb-4">
-                Why putting users first is essential for successful public sector technology projects and how to implement user-centered design principles.
-              </p>
-              <div class="flex items-center text-sm text-platinum">
-                <span>November 28, 2024</span>
-                <span class="mx-2">•</span>
-                <span>6 min read</span>
+                <span>{Ratio.reading_time(article.body)} min read</span>
               </div>
             </div>
           </article>

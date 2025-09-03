@@ -53,4 +53,21 @@ defmodule Ratio do
   def person_by_id(data, id) do
     get_in(data, ["authors", id])
   end
+
+  def posts_by_author_id(posts, id), do: Enum.filter(posts, & &1.author == id)
+
+  def reading_time(content) do
+    words = content |> String.split(" ") |> Enum.count()
+
+    mins =
+      if words < 360 do
+        1
+      else
+        words / 180
+      end
+      |> Kernel./(2)
+      |> ceil()
+
+    mins
+  end
 end

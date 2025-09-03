@@ -5,6 +5,8 @@ defmodule RatioPBC.PostLayout do
   import Ratio.Components
 
   def template(assigns) do
+    author = Ratio.author(assigns.data, assigns.page.author)
+    assigns = Map.put(assigns, :author, author)
     ~H"""
     <!-- Breadcrumb -->
     <section class="bg-white py-4 border-b">
@@ -44,6 +46,8 @@ defmodule RatioPBC.PostLayout do
             </div>
             <span class="mx-4">•</span>
             <span>{Ratio.formatted_date(@page.date)}</span>
+            <span class="mx-4">•</span>
+            <span>{Ratio.reading_time(@page.body)} min read</span>
           </div>
         </div>
         <div class="w-full h-64 md:h-96 bg-platinum rounded-lg mb-8"></div>
@@ -51,29 +55,41 @@ defmodule RatioPBC.PostLayout do
     </section>
 
     <article class="py-8 bg-white">
-        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div id="article_content" class="prose prose-lg max-w-none">
-              {{:safe, render(@inner_content)}}
-            </div>
-            <div class="bg-ink text-white p-6 rounded-lg my-8">
-                <h3 class="text-xl font-semibold mb-3">Ready to Build Resilient Systems?</h3>
-                <p class="mb-4">
-                    If your organization is looking to modernize its public health technology infrastructure, we'd love to help. Our team has extensive experience building resilient systems for government agencies and public health organizations.
-                </p>
-                <a href="/contact" class="bg-sunset hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-semibold transition-all inline-block">
-                    Get In Touch
-                </a>
-            </div>
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div id="article_content" class="prose prose-lg max-w-none">
+          {{:safe, render(@inner_content)}}
         </div>
+        <div class="bg-ink text-white p-6 rounded-lg my-8">
+          <h3 class="text-xl font-semibold mb-3">Ready to Build Resilient Systems?</h3>
+          <p class="mb-4">
+            If your organization is looking to modernize its public health technology infrastructure, we'd love to help. Our team has extensive experience building resilient systems for government agencies and public health organizations.
+          </p>
+          <a
+            href="/contact"
+            class="bg-sunset hover:bg-opacity-90 text-white px-6 py-3 rounded-lg font-semibold transition-all inline-block"
+          >
+            Get In Touch
+          </a>
+        </div>
+      </div>
     </article>
-
 
     <!-- Related Posts -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h2 class="text-3xl font-bold text-ink mb-8 text-center">Related Articles</h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <.card :for={ post <- Ratio.related_posts(@posts, @page) } post={ post } data={ @data } />
+          <.card :for={post <- Ratio.related_posts(@posts, @page)} post={post} data={@data} />
+        </div>
+      </div>
+    </section>
+
+    <!-- Other Posts -->
+    <section class="py-16 bg-cream">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 class="text-3xl font-bold text-ink mb-8 text-center">Other Articles by {@author["first_name"]}</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <.card :for={post <- Ratio.posts_by_author_id(@posts, @page.author)} post={post} data={@data} />
         </div>
       </div>
     </section>
