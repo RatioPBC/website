@@ -40,7 +40,7 @@ config :tableau, :config,
     ]
   ]
 
-config :tableau, Tableau.PageExtension, enabled: true
+config :tableau, Tableau.PageExtension, enabled: true, dir: ["_pages", "_pages/team"]
 config :tableau, Tableau.PostExtension, enabled: true
 config :tableau, Tableau.DataExtension, enabled: true
 config :tableau, Tableau.SitemapExtension, enabled: true
@@ -48,7 +48,7 @@ config :tableau, Tableau.SitemapExtension, enabled: true
 config :tableau, Tableau.RSSExtension,
   enabled: true,
   title: ".",
-  description: "My beautiful website"
+  description: "Posts by Ratio PBC"
 
 config :elixir, :time_zone_database, Tz.TimeZoneDatabase
 

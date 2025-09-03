@@ -24,6 +24,12 @@
         }
 }
 
+#team_member_content {
+  p {
+    @apply text-lg text-dark-gray leading-relaxed mb-6;
+  }
+}
+
 .key-insight {
         @apply bg-cream p-6 rounded-lg my-8;
         h3 {
