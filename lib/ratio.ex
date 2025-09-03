@@ -43,8 +43,14 @@ defmodule Ratio do
 
   def email, do: "hello@ratiopbc.com"
 
+  def people(data) do
+    get_in(data, ["authors"])
+    |> Enum.map(fn {id, person} ->
+      Map.put(person, "id", id)
+    end)
+  end
+
   def person_by_id(data, id) do
-    dbg(data)
     get_in(data, ["authors", id])
   end
 end

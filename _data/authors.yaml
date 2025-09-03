@@ -1,6 +1,7 @@
 jesse:
   name: Jesse Cooke
   first_name: Jesse
+  description: Technologist focused on delivering for public health and human services organizations.
   title: Co-Founder & CTO
   permalink: /team/:id
   expertise:

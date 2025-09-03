@@ -88,29 +88,15 @@ defmodule RatioPBC.AboutPage do
           <p class="text-xl text-dark-gray">Experienced professionals committed to public service</p>
         </div>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-lg text-center">
+          <div :for={person <- Ratio.people(@data)} class="bg-white p-6 rounded-lg text-center">
             <div class="w-24 h-24 bg-platinum rounded-full mx-auto mb-4"></div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Sarah Chen</h3>
-            <p class="text-sunset font-medium mb-2">CEO & Co-Founder</p>
-            <p class="text-dark-gray text-sm">
-              Former public health data analyst with 10+ years experience in government technology.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg text-center">
-            <div class="w-24 h-24 bg-platinum rounded-full mx-auto mb-4"></div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Marcus Rodriguez</h3>
-            <p class="text-sunset font-medium mb-2">CTO & Co-Founder</p>
-            <p class="text-dark-gray text-sm">
-              Software architect specializing in scalable systems for social impact organizations.
-            </p>
-          </div>
-          <div class="bg-white p-6 rounded-lg text-center">
-            <div class="w-24 h-24 bg-platinum rounded-full mx-auto mb-4"></div>
-            <h3 class="text-xl font-semibold text-ink mb-2">Dr. Aisha Patel</h3>
-            <p class="text-sunset font-medium mb-2">Head of Product</p>
-            <p class="text-dark-gray text-sm">
-              Public health researcher and UX designer focused on human-centered design.
-            </p>
+            <h3 class="text-xl font-semibold text-ink mb-2">
+              <.link navigate={"/team/#{person["id"]}"}>
+                {person["name"]}
+              </.link>
+            </h3>
+            <p class="text-sunset font-medium mb-2">{person["title"]}</p>
+            <p class="text-dark-gray text-sm">{person["description"]}</p>
           </div>
         </div>
       </div>
