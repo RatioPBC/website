@@ -3,11 +3,6 @@ id: jesse
 layout: "RatioPBC.TeamLayout"
 title: "Jesse Cooke"
 permalink: /team/:id
-expertise:
-  - header: Lorem Ipsum
-    description: Lorem ipsum dolor sit amet.
-  - header: Lorem Ipsum
-    description: Lorem ipsum dolor sit amet.
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit, neque eget feugiat blandit, lorem justo pretium risus, a blandit dolor eros at orci. Morbi lorem libero, molestie id sollicitudin ut, lacinia a neque. Cras urna est, commodo id elementum eget, sagittis sit amet ligula. Maecenas nibh lorem, pellentesque non iaculis a, faucibus in lectus. Sed gravida lacus a elit efficitur mattis. Proin venenatis metus non odio gravida cursus. Nullam eleifend justo et nulla consequat malesuada. Etiam tempus orci felis, eget dignissim ante vestibulum eu. Curabitur molestie suscipit massa, id porttitor ex pretium sit amet. Proin id ligula a nisl aliquet feugiat. Curabitur iaculis lacinia tristique.

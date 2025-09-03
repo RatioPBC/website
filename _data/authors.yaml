@@ -1,4 +1,22 @@
 jesse:
   name: Jesse Cooke
+  first_name: Jesse
   title: Co-Founder & CTO
-
+  permalink: /team/:id
+  expertise:
+    - header: Lorem Ipsum
+      description: Lorem ipsum dolor sit amet.
+    - header: Lorem Ipsum
+      description: Lorem ipsum dolor sit amet.
+  location: Portland, OR
+  experience: 20+ years
+  alma_mater: Washington University in St. Louis
+  publications_and_speaking:
+    - title: Lorem ipsum dolor sit amet
+      source: American Journal of Ipsum
+      year: 2025
+      url: https://example.com?article=1
+    - title: Mauris eleifend hendrerit tempus
+      source: Journal of Mauris
+      year: 2024
+      url: https://example.com?article=2

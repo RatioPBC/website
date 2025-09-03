@@ -42,4 +42,9 @@ defmodule Ratio do
   end
 
   def email, do: "hello@ratiopbc.com"
+
+  def person_by_id(data, id) do
+    dbg(data)
+    get_in(data, ["authors", id])
+  end
 end

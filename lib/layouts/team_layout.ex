@@ -3,7 +3,8 @@ defmodule RatioPBC.TeamLayout do
   use Phoenix.Component
 
   def template(assigns) do
-    dbg(assigns)
+    assigns =
+      Map.put(assigns, :person, Ratio.person_by_id(assigns.data, "jesse"))
     ~H"""
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -16,7 +17,7 @@ defmodule RatioPBC.TeamLayout do
             <div class="bg-cream p-8 rounded-lg text-center">
               <div class="w-48 h-48 bg-sunset rounded-full mx-auto mb-6"></div>
               <h1 class="text-3xl font-bold text-ink mb-2">{@page.title}</h1>
-              <p class="text-xl text-sunset font-medium mb-4">CEO & Co-Founder</p>
+              <p class="text-xl text-sunset font-medium mb-4">{@person["title"]}</p>
               <div class="flex justify-center space-x-4 mb-6">
                 <a href="#" class="text-platinum hover:text-sunset">
                   <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -41,7 +42,7 @@ defmodule RatioPBC.TeamLayout do
                 </a>
               </div>
               <div class="text-left space-y-3">
-                <div class="flex items-center text-sm text-dark-gray">
+                <div :if={@person["location"]} class="flex items-center text-sm text-dark-gray">
                   <svg
                     class="w-4 h-4 mr-2 text-sunset"
                     fill="none"
@@ -63,9 +64,9 @@ defmodule RatioPBC.TeamLayout do
                     >
                     </path>
                   </svg>
-                  Washington, DC
+                  {@person["location"]}
                 </div>
-                <div class="flex items-center text-sm text-dark-gray">
+                <div :if={@person["experience"]} class="flex items-center text-sm text-dark-gray">
                   <svg
                     class="w-4 h-4 mr-2 text-sunset"
                     fill="none"
@@ -80,9 +81,9 @@ defmodule RatioPBC.TeamLayout do
                     >
                     </path>
                   </svg>
-                  10+ years experience
+                  {@person["experience"]} experience
                 </div>
-                <div class="flex items-center text-sm text-dark-gray">
+                <div :if={@person["alma_mater"]} class="flex items-center text-sm text-dark-gray">
                   <svg
                     class="w-4 h-4 mr-2 text-sunset"
                     fill="none"
@@ -97,7 +98,7 @@ defmodule RatioPBC.TeamLayout do
                     >
                     </path>
                   </svg>
-                  MPH, Johns Hopkins
+                  <span :if={@person["degree"]}>{@person["degree"]}, </span>{@person["alma_mater"]}
                 </div>
               </div>
             </div>
@@ -105,7 +106,7 @@ defmodule RatioPBC.TeamLayout do
           <div class="lg:col-span-2">
             <div class="space-y-8">
               <div>
-                <h2 class="text-3xl font-bold text-ink mb-4">About Sarah</h2>
+                <h2 class="text-3xl font-bold text-ink mb-4">About {@person["first_name"]}</h2>
                 <div id="team_member_content">
                   {{:safe, render(@inner_content)}}
                 </div>
@@ -113,30 +114,23 @@ defmodule RatioPBC.TeamLayout do
               <div>
                 <h3 class="text-2xl font-bold text-ink mb-4">Expertise</h3>
                 <div class="grid md:grid-cols-2 gap-4">
-                  <div class="bg-cream p-4 rounded-lg" :for={expertise <- @page.expertise}>
-                    <h4 class="font-semibold text-ink mb-2">{expertise.header}</h4>
-                    <p class="text-dark-gray text-sm">{expertise.description}</p>
+                  <div class="bg-cream p-4 rounded-lg" :for={expertise <- @person["expertise"]}>
+                    <h4 class="font-semibold text-ink mb-2">{expertise["header"]}</h4>
+                    <p class="text-dark-gray text-sm">{expertise["description"]}</p>
                   </div>
                 </div>
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-ink mb-4">Recent Publications & Speaking</h3>
+                <h3 class="text-2xl font-bold text-ink mb-4">Publications & Speaking</h3>
                 <div class="space-y-4">
-                  <div class="border-l-4 border-sunset pl-4">
+                  <div :for={pub <- @person["publications_and_speaking"]} class="border-l-4 border-sunset pl-4">
                     <h4 class="font-semibold text-ink">
-                      "Interoperability Challenges in Public Health Data Systems"
+                      <span :if={!pub["url"]}>{pub["title"]}</span>
+                      <.link :if={pub["url"]} navigate={pub["url"]} class="hover:text-sunset">
+                        {pub["title"]}
+                      </.link>
                     </h4>
-                    <p class="text-dark-gray text-sm">American Journal of Public Health, 2024</p>
-                  </div>
-                  <div class="border-l-4 border-sunset pl-4">
-                    <h4 class="font-semibold text-ink">
-                      "Building Resilient Public Health Infrastructure"
-                    </h4>
-                    <p class="text-dark-gray text-sm">HIMSS Public Health IT Summit, 2024</p>
-                  </div>
-                  <div class="border-l-4 border-sunset pl-4">
-                    <h4 class="font-semibold text-ink">"The Future of Government Technology"</h4>
-                    <p class="text-dark-gray text-sm">Code for America Summit, 2023</p>
+                    <p class="text-dark-gray text-sm">{pub["source"]}, {pub["year"]}</p>
                   </div>
                 </div>
               </div>
