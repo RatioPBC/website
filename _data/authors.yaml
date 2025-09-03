@@ -20,3 +20,10 @@ jesse:
       source: Journal of Mauris
       year: 2024
       url: https://example.com?article=2
+  awards_and_recognitions:
+    - title: Public Health Top 100 Widget Makers
+      year: 2025
+      url: https://example.com?article=1
+    - title: State IT Magic Marker Makers
+      year: 2024
+      url: https://example.com?article=2

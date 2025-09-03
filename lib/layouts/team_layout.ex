@@ -137,21 +137,12 @@ defmodule RatioPBC.TeamLayout do
               <div>
                 <h3 class="text-2xl font-bold text-ink mb-4">Awards & Recognition</h3>
                 <div class="space-y-3">
-                  <div class="flex items-center">
+                  <div :for={anr <- @person["awards_and_recognitions"]} class="flex items-center">
                     <div class="w-3 h-3 bg-sunset rounded-full mr-3"></div>
-                    <span class="text-dark-gray">
-                      Federal 100 Award for Public Health Innovation (2023)
-                    </span>
-                  </div>
-                  <div class="flex items-center">
-                    <div class="w-3 h-3 bg-sunset rounded-full mr-3"></div>
-                    <span class="text-dark-gray">
-                      CDC Excellence in Public Health Informatics Award (2021)
-                    </span>
-                  </div>
-                  <div class="flex items-center">
-                    <div class="w-3 h-3 bg-sunset rounded-full mr-3"></div>
-                    <span class="text-dark-gray">Johns Hopkins Alumni Achievement Award (2020)</span>
+                    <span :if={!anr["url"]} class="text-dark-gray">{anr["title"]} ({anr["year"]})</span>
+                    <.link :if={anr["url"]} navigate={anr["url"]} class="hover:text-sunset">
+                      {anr["title"]} ({anr["year"]})
+                    </.link>
                   </div>
                 </div>
               </div>
