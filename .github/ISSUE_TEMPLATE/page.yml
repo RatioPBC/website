@@ -1,0 +1,61 @@
+name: Page
+description: Create a new or update an existing page
+title: "[PAGE]: "
+type: "Page"
+projects:
+  - RatioPBC/23
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Title
+      placeholder: About Widgets...
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+  - type: textarea
+    id: description
+    attributes:
+      label: Description/Goal
+      description: Any additional context, special requirements, or notes
+  - type: textarea
+    id: production-checklist
+    attributes:
+      label: Production Checklist
+      value: |
+        ### Development
+        - [ ] First draft complete
+        - [ ] Internal review complete
+        - [ ] Revisions complete
+        - [ ] Final draft approved
+
+        ### Pre-Publication
+        - [ ] Proofread and edited
+        - [ ] SEO optimization complete
+        - [ ] Meta description written
+        - [ ] Internal links added
+        - [ ] External links verified
+
+        ### Publishing
+        - [ ] Publish
+        - [ ] URL structure confirmed
+        - [ ] Categories/tags applied
+
+        ### Promotion
+        - [ ] Social media posts scheduled
+          - [ ] Blue Sky
+          - [ ] LinkedIn
+        - [ ] Email newsletter inclusion
+        - [ ] Slack/internal announcement
+        - [ ] Added to content calendar
+
