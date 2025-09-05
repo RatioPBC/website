@@ -20,10 +20,16 @@ defmodule RatioPBC.RootLayout do
           |> Enum.join(" ")}
         </title>
 
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+          href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@100..900&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+          rel="stylesheet"
+        />
         <link rel="stylesheet" href="/css/site.css" />
         <link rel="icon" href="/favicon.ico" />
       </head>
-      <body class="bg-cream text-dark-gray">
+      <body class="bg-cream text-dark-gray font-pt-sans">
         <.nav pages={Ratio.all_pages(@data)} />
         {render(@inner_content)}
         <.footer
@@ -48,10 +54,17 @@ defmodule RatioPBC.RootLayout do
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="flex justify-between items-center py-4">
           <div class="flex items-center">
-            <h1 class="text-2xl font-bold text-ink">Ratio PBC</h1>
+            <h1 class="text-2xl font-league-spartan font-bold text-ink">Ratio PBC</h1>
           </div>
           <div class="hidden md:flex space-x-8">
-            <.link :for={page <- @pages} navigate={page["path"]} rel="prefetch" class="hover:text-sunset">{page["name"]}</.link>
+            <.link
+              :for={page <- @pages}
+              navigate={page["path"]}
+              rel="prefetch"
+              class="hover:text-sunset"
+            >
+              {page["name"]}
+            </.link>
             <a href={"mailto:" <> Ratio.email()} class="hover:text-sunset">Contact</a>
           </div>
           <div class="md:hidden">
@@ -81,10 +94,7 @@ defmodule RatioPBC.RootLayout do
             <h4 class="font-semibold mb-4">Services</h4>
             <ul class="space-y-2 text-platinum">
               <li :for={service <- @services}>
-                <.service_link
-                  service={service}
-                  class="hover:text-sunset"
-                >
+                <.service_link service={service} class="hover:text-sunset">
                   {service["name"]}
                 </.service_link>
               </li>

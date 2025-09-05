@@ -6,6 +6,8 @@
   --color-platinum: #bfc3ca;
   --color-sunset: #e9a753;
   --color-ink: #4d5f75;
+  --font-pt-sans: "PT Sans", sans-serif;
+  --font-league-spartan: "League Spartan", sans-serif;
 }
 
 #article_content {

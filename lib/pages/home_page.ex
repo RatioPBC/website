@@ -22,9 +22,9 @@ defmodule RatioPBC.HomePage do
     <section class="bg-gradient-to-r from-ink to-sunset text-white py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <h1 class="text-4xl md:text-6xl font-league-spartan mb-6">
             Building Technology for<br />
-            <span class="text-cream">Public Good</span>
+            Public Good
           </h1>
           <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">
             We create software and data applications that empower public health and human services organizations to serve their communities better.
