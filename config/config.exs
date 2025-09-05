@@ -12,7 +12,7 @@ config :web_dev_utils, :reload_log, true
 # config :web_dev_utils, :reload_url, "'wss://' + location.host + '/ws'"
 
 config :tailwind,
-  version: "4.1.0",
+  version: "4.1.13",
   default: [
     args: ~w(
     --input=assets/css/site.css
