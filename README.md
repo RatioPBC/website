@@ -2,10 +2,22 @@
 
 ## Getting Started
 
+You need to have [mise](https://mise.jdx.dev/installing-mise.html) installed.
+
+- macos:
+  - `brew install mise`
+- linux:
+  - deb via [apt](https://mise.jdx.dev/installing-mise.html#apt)
+  - `curl https://mise.run | sh`
+
+You'll then want to [set up your shell](https://mise.jdx.dev/installing-mise.html#shells).
 
 ```shell
+# setup
 mix deps.get
+mix tailwind.install
 
+# everyday development
 mise serve
 ```
 
