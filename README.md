@@ -14,6 +14,8 @@ You'll then want to [set up your shell](https://mise.jdx.dev/installing-mise.htm
 
 ```shell
 # setup
+mise trust
+mise install
 mix deps.get
 mix tailwind.install
 
