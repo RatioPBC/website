@@ -5,8 +5,8 @@ nav:
     path: /about
   - name: Services
     path: /services
-  - name: Blog
-    path: /blog
+  # - name: Blog
+  #   path: /blog
 
 post_types:
   - name: Case Study
