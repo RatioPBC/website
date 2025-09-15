@@ -40,11 +40,11 @@ jobs:
           mix deps.get
           mix tailwind.install
 
-      - name: "Build Tableau"
+      - name: "Build site & css"
         env:
           MIX_ENV: prod
         run: |
-          mix tableau.build
+          mix build
 
       - name: Upload static files as artifact
         uses: actions/upload-pages-artifact@v4
