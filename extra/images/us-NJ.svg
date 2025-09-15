@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+************* Copyright (c) 2017 Pareto Softare, LLC DBA Simplemaps.com *******************		
+************* Free for Commercial Use, full terms at  http://simplemaps.com/resources/svg-license ************
+************* Attribution is appreciated! http://simplemaps.com ***************************
+-->
+
+<svg
+   enable_background="new 0 0 1000 589"
+   height="59.659103"
+   pretty_print="False"
+   style="fill:none;stroke:#000000;stroke-linejoin:round"
+   version="1.1"
+   viewBox="0 0 30.157288 59.659103"
+   width="30.157288"
+   id="svg"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="NJ.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     id="namedview69"
+     showgrid="false"
+     inkscape:zoom="0.80893016"
+     inkscape:cx="817.66365"
+     inkscape:cy="409.3738"
+     inkscape:window-x="1192"
+     inkscape:window-y="118"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="30.157288"
+       height="59.659103"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style6">path { fill-rule: evenodd; }</style>
+  </defs>
+  <metadata
+     id="metadata8">
+    <views
+       id="views10">
+      <view
+         h="589.235294118"
+         padding="0"
+         w="1000"
+         id="view12">
+        <proj
+           id="laea-usa"
+           lat0="45"
+           lon0="-100" />
+        <bbox
+           h="321.97"
+           w="589.33"
+           x="690.09"
+           y="918.69"
+           id="bbox15" />
+      </view>
+    </views>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     inkscape:connector-curvature="0"
+     id="NJ"
+     data-name="New Jersey"
+     data-id="NJ"
+     d="m 25.635776,44.066143 -0.48531,-1.16476 v 1.16476 z m 0.97064,-3.59134 0.29119,-2.91189 -0.58238,2.52364 z m -3.97959,-29.79837 -10.19163,-2.5236503 -1.74714,-0.48531 -1.6500698,-0.38825 v 0 l -4.07665,9.0268703 1.74714,2.13539 -0.0971,6.50322 1.8442,0.29119 3.7854598,9.90044 -0.19412,0.29119 -4.7560898,6.98855 0.48531,5.33847 11.4534498,3.88252 0.0971,4.46491 2.62071,-3.6884 0.38825,-5.33847 2.71777,-1.8442 -1.0677,-3.97959 2.03833,-4.75609 v -10.38576 l -0.67944,-3.39721 -4.56197,0.0971 1.16476,-4.65903 0.67944,-7.47386 v 0 z"
+     style="fill:#f9f9f9;stroke-width:0.970631" />
+  <rect
+     style="fill:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:bevel"
+     id="rect1"
+     width="30.157288"
+     height="59.659096"
+     x="1.1889571e-05"
+     y="-1.0768691e-06"
+     rx="9.3818998"
+     ry="3.708602" />
+</svg>

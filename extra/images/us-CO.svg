@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!--
+************* Copyright (c) 2017 Pareto Softare, LLC DBA Simplemaps.com *******************		
+************* Free for Commercial Use, full terms at  http://simplemaps.com/resources/svg-license ************
+************* Attribution is appreciated! http://simplemaps.com ***************************
+-->
+
+<svg
+   enable_background="new 0 0 1000 589"
+   height="100.13225"
+   pretty_print="False"
+   style="fill:none;stroke:#000000;stroke-linejoin:round"
+   version="1.1"
+   viewBox="0 0 122.07483 100.13225"
+   width="122.07483"
+   id="svg"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="CO.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1137"
+     id="namedview69"
+     showgrid="false"
+     inkscape:zoom="0.80893016"
+     inkscape:cx="817.66365"
+     inkscape:cy="409.3738"
+     inkscape:window-x="1192"
+     inkscape:window-y="118"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:page
+       x="0"
+       y="0"
+       width="122.07483"
+       height="100.13225"
+       id="page2"
+       margin="0"
+       bleed="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs4">
+    <style
+       type="text/css"
+       id="style6">path { fill-rule: evenodd; }</style>
+  </defs>
+  <metadata
+     id="metadata8">
+    <views
+       id="views10">
+      <view
+         h="589.235294118"
+         padding="0"
+         w="1000"
+         id="view12">
+        <proj
+           id="laea-usa"
+           lat0="45"
+           lon0="-100" />
+        <bbox
+           h="321.97"
+           w="589.33"
+           x="690.09"
+           y="918.69"
+           id="bbox15" />
+      </view>
+    </views>
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     inkscape:connector-curvature="0"
+     id="CO"
+     data-name="Colorado"
+     data-id="CO"
+     d="m 117.84495,33.651489 0.38826,-19.02437 -4.65903,-0.19413 -23.683401,-0.87357 -2.32952,-0.0971 -1.94126,-0.0971 -28.82775,-1.8442 -19.2185,-1.5530099 -23.97459,-2.32952 -2.32951,-0.29119 -0.29119,2.52365 -5.2414098,50.5698799 -1.8442,17.66549 -0.7765,7.66799 -0.19413,2.52364 3.00896,0.29119 48.9198098,4.27077 21.54801,1.35889 21.45095,0.97063 3.106021,0.0971 1.94126,0.0971 4.07665,0.0971 1.94127,0.0971 6.11497,0.19413 h 1.55301 v -1.94127 l 1.0677,-51.34639 0.0971,-5.72672 v -1.8442 l 0.0971,-1.26182 z"
+     style="fill:#f9f9f9;stroke-width:0.970631" />
+  <rect
+     style="fill:none;stroke-width:0;stroke-linecap:round;stroke-linejoin:bevel"
+     id="rect1"
+     width="122.07483"
+     height="100.13225"
+     x="2.7362537e-06"
+     y="4.5987358e-06"
+     rx="9.3818998"
+     ry="3.708602" />
+</svg>
