@@ -22,7 +22,7 @@ defmodule RatioPBC.HomePage do
     <!-- Hero Section -->
     <section
       class="relative text-white py-20"
-      style="background-image: url('/images/heroimage.svg'); background-size: cover; background-position: top center; background-repeat: no-repeat;"
+      style="background-image: url('/images/heroimage.png'); background-size: cover; background-position: top center; background-repeat: no-repeat;"
     >
       <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center">
