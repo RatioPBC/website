@@ -397,7 +397,7 @@ defmodule RatioPBC.HomePage do
           Let's explore how modern data solutions can transform how your organization serves your community.
         </p>
         <a
-          href="/contact"
+          href={"mailto:" <> Ratio.email()}
           class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all inline-block"
         >
           Get In Touch
