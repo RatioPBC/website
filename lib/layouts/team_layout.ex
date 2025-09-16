@@ -105,7 +105,9 @@ defmodule RatioPBC.TeamLayout do
                     >
                     </path>
                   </svg>
-                  <span :if={@person["degree"]}>{@person["degree"]}, </span>{@person["alma_mater"]}
+                  <span :if={@person["degree"]}>{@person["degree"]},&nbsp;</span>{@person[
+                    "alma_mater"
+                  ]}
                 </div>
               </div>
             </div>
