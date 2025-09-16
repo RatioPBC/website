@@ -8,7 +8,6 @@ defmodule RatioPBC.TeamPage do
 
   def template(assigns) do
     ~H"""
-
     <!-- Team Section -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

@@ -7,6 +7,7 @@ defmodule RatioPBC.PostLayout do
   def template(assigns) do
     author = Ratio.author(assigns.data, assigns.page.author)
     assigns = Map.put(assigns, :author, author)
+
     ~H"""
     <!-- Breadcrumb -->
     <section class="bg-white py-4 border-b">
@@ -87,9 +88,15 @@ defmodule RatioPBC.PostLayout do
     <!-- Other Posts -->
     <section class="py-16 bg-cream">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 class="text-3xl font-bold text-ink mb-8 text-center">Other Articles by {@author["first_name"]}</h2>
+        <h2 class="text-3xl font-bold text-ink mb-8 text-center">
+          Other Articles by {@author["first_name"]}
+        </h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <.card :for={post <- Ratio.posts_by_author_id(@posts, @page.author)} post={post} data={@data} />
+          <.card
+            :for={post <- Ratio.posts_by_author_id(@posts, @page.author)}
+            post={post}
+            data={@data}
+          />
         </div>
       </div>
     </section>
