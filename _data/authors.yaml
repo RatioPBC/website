@@ -4,27 +4,27 @@ jesse:
   description: Technologist focused on delivering for public health and human services organizations.
   title: Co-Founder & CTO
   permalink: /team/:id
-  expertise:
-    - header: Lorem Ipsum
-      description: Lorem ipsum dolor sit amet.
-    - header: Lorem Ipsum
-      description: Lorem ipsum dolor sit amet.
+  # expertise:
+  #   - header: Lorem Ipsum
+  #     description: Lorem ipsum dolor sit amet.
+  #   - header: Lorem Ipsum
+  #     description: Lorem ipsum dolor sit amet.
   location: Portland, OR
   experience: 20+ years
   alma_mater: Washington University in St. Louis
-  publications_and_speaking:
-    - title: Lorem ipsum dolor sit amet
-      source: American Journal of Ipsum
-      year: 2025
-      url: https://example.com?article=1
-    - title: Mauris eleifend hendrerit tempus
-      source: Journal of Mauris
-      year: 2024
-      url: https://example.com?article=2
-  awards_and_recognitions:
-    - title: Public Health Top 100 Widget Makers
-      year: 2025
-      url: https://example.com?article=1
-    - title: State IT Magic Marker Makers
-      year: 2024
-      url: https://example.com?article=2
+  # publications_and_speaking:
+  #   - title: Lorem ipsum dolor sit amet
+  #     source: American Journal of Ipsum
+  #     year: 2025
+  #     url: https://example.com?article=1
+  #   - title: Mauris eleifend hendrerit tempus
+  #     source: Journal of Mauris
+  #     year: 2024
+  #     url: https://example.com?article=2
+  # awards_and_recognitions:
+    # - title: Public Health Top 100 Widget Makers
+    #   year: 2025
+    #   url: https://example.com?article=1
+    # - title: State IT Magic Marker Makers
+    #   year: 2024
+    #   url: https://example.com?article=2

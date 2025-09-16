@@ -54,7 +54,7 @@ defmodule Ratio do
     get_in(data, ["authors", id])
   end
 
-  def posts_by_author_id(posts, id), do: Enum.filter(posts, & &1.author == id)
+  def posts_by_author_id(posts, id), do: Enum.filter(posts, &(&1.author == id))
 
   def reading_time(content) do
     words = content |> String.split(" ") |> Enum.count()
@@ -69,5 +69,29 @@ defmodule Ratio do
       |> ceil()
 
     mins
+  end
+
+  def awards_and_recognitions?(person) do
+    awards_and_recognitions(person) |> Enum.empty?() |> Kernel.not()
+  end
+
+  def awards_and_recognitions(person) do
+    Map.get(person, "awards_and_recognitions", [])
+  end
+
+  def expertise?(person) do
+    expertise(person) |> Enum.empty?() |> Kernel.not()
+  end
+
+  def expertise(person) do
+    Map.get(person, "expertise", [])
+  end
+
+  def publications_and_speaking?(person) do
+    publications_and_speaking(person) |> Enum.empty?() |> Kernel.not()
+  end
+
+  def publications_and_speaking(person) do
+    Map.get(person, "publications_and_speaking", [])
   end
 end

@@ -2,16 +2,19 @@ defmodule RatioPBC.TeamLayout do
   use Tableau.Layout, layout: RatioPBC.RootLayout
   use Phoenix.Component
 
+  import Ratio
+
   def template(assigns) do
     id = assigns.page.id
+
     assigns =
       assigns
       |> Map.put(:person, Ratio.person_by_id(assigns.data, id))
       |> Map.put(:articles, Ratio.posts_by_author_id(assigns.posts, id))
+
     ~H"""
     <section class="py-16 bg-cream">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      </div>
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"></div>
     </section>
     <section class="py-16 bg-white">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -114,19 +117,22 @@ defmodule RatioPBC.TeamLayout do
                   {{:safe, render(@inner_content)}}
                 </div>
               </div>
-              <div>
+              <div :if={expertise?(@person)}>
                 <h3 class="text-2xl font-bold text-ink mb-4">Expertise</h3>
                 <div class="grid md:grid-cols-2 gap-4">
-                  <div class="bg-cream p-4 rounded-lg" :for={expertise <- @person["expertise"]}>
+                  <div :for={expertise <- expertise(@person)} class="bg-cream p-4 rounded-lg">
                     <h4 class="font-semibold text-ink mb-2">{expertise["header"]}</h4>
                     <p class="text-dark-gray text-sm">{expertise["description"]}</p>
                   </div>
                 </div>
               </div>
-              <div>
+              <div :if={publications_and_speaking?(@person)}>
                 <h3 class="text-2xl font-bold text-ink mb-4">Publications & Speaking</h3>
                 <div class="space-y-4">
-                  <div :for={pub <- @person["publications_and_speaking"]} class="border-l-4 border-sunset pl-4">
+                  <div
+                    :for={pub <- publications_and_speaking(@person)}
+                    class="border-l-4 border-sunset pl-4"
+                  >
                     <h4 class="font-semibold text-ink">
                       <span :if={!pub["url"]}>{pub["title"]}</span>
                       <.link :if={pub["url"]} navigate={pub["url"]} class="hover:text-sunset">
@@ -137,12 +143,14 @@ defmodule RatioPBC.TeamLayout do
                   </div>
                 </div>
               </div>
-              <div>
+              <div :if={awards_and_recognitions?(@person)}>
                 <h3 class="text-2xl font-bold text-ink mb-4">Awards & Recognition</h3>
                 <div class="space-y-3">
-                  <div :for={anr <- @person["awards_and_recognitions"]} class="flex items-center">
+                  <div :for={anr <- awards_and_recognitions(@person)} class="flex items-center">
                     <div class="w-3 h-3 bg-sunset rounded-full mr-3"></div>
-                    <span :if={!anr["url"]} class="text-dark-gray">{anr["title"]} ({anr["year"]})</span>
+                    <span :if={!anr["url"]} class="text-dark-gray">
+                      {anr["title"]} ({anr["year"]})
+                    </span>
                     <.link :if={anr["url"]} navigate={anr["url"]} class="hover:text-sunset">
                       {anr["title"]} ({anr["year"]})
                     </.link>
