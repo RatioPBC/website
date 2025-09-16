@@ -21,7 +21,8 @@ defmodule RatioPBC.TeamLayout do
         <div class="grid lg:grid-cols-3 gap-12">
           <div class="lg:col-span-1">
             <div class="bg-cream p-8 rounded-lg text-center">
-              <div class="w-48 h-48 bg-sunset rounded-full mx-auto mb-6"></div>
+              <div class={ "w-48 h-48 mask-radial-at-center mask-radial-from-100% bg-cover bg-[url(/images/team/#{@page.id}.png)] rounded-full mx-auto mb-6" }>
+              </div>
               <h1 class="text-3xl font-bold text-ink mb-2">{@page.title}</h1>
               <p class="text-xl text-sunset font-medium mb-4">{@person["title"]}</p>
               <div class="flex justify-center space-x-4 mb-6">
