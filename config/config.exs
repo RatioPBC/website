@@ -20,9 +20,7 @@ config :tailwind,
     )
   ]
 
-config :tableau, :assets,
-  tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
-  copy: {File, :cp_r!, ["assets/static", "_site"]}
+config :tableau, :assets, tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]}
 
 config :tableau, :config,
   url: "http://localhost:4999",
