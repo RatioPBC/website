@@ -1,0 +1,13 @@
+[[redirects]]
+from = "/calendars/jesse"
+to = "https://calendar.google.com/calendar/u/0/appointments/AcZssZ10w4zrHjSvRNuOXRCvkruv_l4rT9O14mvM4yw=?gv=true"
+status = 302
+
+[[redirects]]
+from = "/calendars/eric"
+to = "https://calendly.com/eric-ratio"
+status = 302
+
+[build]
+command = "mix local.hex --force && mix local.rebar --force && mix deps.get --only prod && MIX_ENV=prod mix build"
+publish = "_site"

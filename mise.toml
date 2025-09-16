@@ -1,2 +1,12 @@
 [tools]
-node = "23.8.0"
+elixir = "1.18.4-otp-28"
+erlang = "28.0.2"
+
+[tasks."install:tableau"]
+run = "mix archive.install hex tableau_new"
+
+[tasks.build]
+run = "mix build"
+
+[tasks.serve]
+run = "mix tableau.server"

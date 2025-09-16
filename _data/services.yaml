@@ -1,0 +1,25 @@
+- name: Custom Software Development
+  description: We build tailored applications that fit your organization's unique workflows and requirements.
+  icon: code
+  aspects:
+    - Web Applications
+    - Mobile Applications
+    - API Development
+    - Legacy System Modernization
+- name: Data & Analytics Engineering
+  description: Transform your data into actionable insights with custom dashboards and reporting tools.
+  icon: data
+  aspects:
+    - Interactive Dashboards
+    - Automated Reporting
+    - Data Warehousing
+    - Predictive Analytics
+
+- name: System Integration
+  description: Connect disparate systems and streamline data flow across your organization.
+  icon: terminal
+  aspects:
+    - API Integration
+    - Data Migration
+    - Workflow Automation
+    - Cloud Migration

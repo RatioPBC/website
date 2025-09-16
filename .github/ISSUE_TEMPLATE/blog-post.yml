@@ -1,0 +1,122 @@
+name: Blog Post
+description: Create a new blog post
+title: "[BLOG]: "
+type: "Blog Post"
+projects:
+  - RatioPBC/23
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Working Title
+      description: Proposed title of post
+      placeholder: Why we build data widgets...
+    validations:
+      required: true
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      options:
+        - High
+        - Medium
+        - Low
+      default: 1
+    validations:
+      required: true
+  - type: dropdown
+    id: content-type
+    attributes:
+      label: Content Type
+      options:
+        - How-to/Tutorial
+        - Industry News/Trends
+        - Case Study
+        - Product Update
+        - Thought Leadership
+        - Company News
+        - Other
+      default: 4
+    validations:
+      required: true
+  - type: textarea
+    id: audience
+    attributes:
+      label: Target Audience
+      description: Describe the primary audience
+  - type: textarea
+    id: goal
+    attributes:
+      label: Primary Goal
+      description: What's the main objective? (e.g., drive traffic, generate leads, educate, brand awareness)
+  - type: textarea
+    id: key-points
+    attributes:
+      label: Key Points to cover
+      value: |
+        - [ ] Point 1
+        - [ ] Point 2
+        - [ ] Point 3
+        - [ ] Point 4
+  - type: textarea
+    id: research-links
+    attributes:
+      label: Research Links
+      description: Add any reference materials, sources, or inspiration
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: internal-links
+    attributes:
+      label: Internal Links
+      description: List any existing blog posts or pages to link to
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: external-links
+    attributes:
+      label: External Links
+      description: list any external sources to reference or link to
+      value: |
+        - 
+        - 
+  - type: textarea
+    id: production-checklist
+    attributes:
+      label: Production Checklist
+      value: |
+        ### Writing Phase
+        - [ ] Outline approved
+        - [ ] First draft complete
+        - [ ] Internal review complete
+        - [ ] Revisions complete
+        - [ ] Final draft approved
+
+        ### Pre-Publication
+        - [ ] Proofread and edited
+        - [ ] SEO optimization complete
+        - [ ] Meta description written
+        - [ ] Featured image ready
+        - [ ] Internal links added
+        - [ ] External links verified
+
+        ### Publishing
+        - [ ] Publish
+        - [ ] URL structure confirmed
+        - [ ] Categories/tags applied
+        - [ ] Author bio updated
+
+        ### Promotion
+        - [ ] Social media posts scheduled
+          - [ ] Blue Sky
+          - [ ] LinkedIn
+        - [ ] Email newsletter inclusion
+        - [ ] Slack/internal announcement
+        - [ ] Added to content calendar
+  - type: textarea
+    id: notes
+    attributes:
+      label: external links
+      description: Any additional context, special requirements, or notes for the team 
