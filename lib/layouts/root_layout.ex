@@ -53,14 +53,6 @@ defmodule RatioPBC.RootLayout do
             <h1 class="text-2xl font-league-spartan font-bold text-ink">Ratio PBC</h1>
           </div>
           <div class="hidden md:flex space-x-8">
-            <.link
-              :for={page <- @pages}
-              navigate={page["path"]}
-              rel="prefetch"
-              class="hover:text-sunset"
-            >
-              {page["name"]}
-            </.link>
             <a href={"mailto:" <> Ratio.email()} class="hover:text-sunset">Contact</a>
           </div>
           <div class="md:hidden">
