@@ -20,20 +20,21 @@ defmodule RatioPBC.HomePage do
   def hero(assigns) do
     ~H"""
     <!-- Hero Section -->
-    <section class="bg-gradient-to-r from-ink to-sunset text-white py-20">
-      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-6xl font-bold mb-6">Unlock the power<br>
-            <span class="text-cream">of connected data</span>
-          </h1>
-          <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">We solve complex data interoperability challenges and build sustainable data strategies that scale across programs and jurisdictions</p>
-          <div class="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/services" class="bg-sunset hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all">
-             Let's talk
-            </a></div>
-        </div>
+<section class="relative text-white py-20" style="background-image: url('/images/heroimage.svg'); background-size: cover; background-position: top center; background-repeat: no-repeat;">
+  <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center">
+      <h1 class="text-4xl md:text-6xl font-bold mb-6">Unlock the power<br>
+        <span class="text-cream">of connected data</span>
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto opacity-90">We solve complex data interoperability challenges and build sustainable data strategies that scale across programs and jurisdictions</p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href={"mailto:" <> Ratio.email()} class="bg-ink hover:bg-opacity-90 text-white px-8 py-3 rounded-lg font-semibold transition-all">
+         Let's talk
+        </a>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
     """
   end
 
