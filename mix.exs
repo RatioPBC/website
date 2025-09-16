@@ -3,7 +3,7 @@ defmodule RatioPBC.MixProject do
 
   def project do
     [
-      app: :.,
+      app: :ratio_website,
       version: "0.1.0",
       elixir: "~> 1.15",
       start_permanent: Mix.env() == :prod,
